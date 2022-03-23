@@ -26,11 +26,11 @@ class Point3D:
         return self._data[2]
 
     @cached_property
-    def norm(self):
+    def magnitude(self):
         return np.linalg.norm(self._data)
 
     def normalized(self):
-        return self.__class__(*(self._data/self.norm))
+        return self.__class__(*(self._data/self.magnitude))
 
     def __add__(self, other):
         return self.__class__(self._data + np.asarray(other))
