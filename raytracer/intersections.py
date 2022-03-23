@@ -3,6 +3,10 @@ import sys
 from .geometry import Parallelogram, Plane, Ray, Sphere, Triangle
 
 
+class NoIntersection(Exception):
+    pass
+
+
 def intersection(o1: Parallelogram|Plane|Ray|Sphere|Triangle,
                  o2: Parallelogram|Plane|Ray|Sphere|Triangle) -> float:
     o1_type = type(o1).__name__.lower()
