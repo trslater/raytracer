@@ -73,44 +73,37 @@ class Ray:
 
 
 @dataclass(frozen=True)
-class Plane:
+class Shape:
+    def intersection(self, other) -> float:
+        return intersection(self, other)
+
+
+@dataclass(frozen=True)
+class Plane(Shape):
     position: Point3D
     normal: Point3D
 
-    def intersection(self, other) -> float:
-        return intersection(self, other)
-
 
 @dataclass(frozen=True)
-class Sphere:
+class Sphere(Shape):
     center: Point3D
     radius: float
 
-    def intersection(self, other) -> float:
-        return intersection(self, other)
-
 
 @dataclass(frozen=True)
-class Parallelogram:
+class Parallelogram(Shape):
     origin: Point3D
     a: Point3D
     b: Point3D
 
-    def intersection(self, other) -> float:
-        return intersection(self, other)
+    def contains(self, p: Point3D) -> bool:
+        raise NotImplemented()
 
     def plane(self):
         return Plane(self.origin, self.a.cross(self.b))
 
 
 @dataclass(frozen=True)
-class Triangle:
-    origin: Point3D
-    a: Point3D
-    b: Point3D
-
-    def intersection(self, other) -> float:
-        return intersection(self, other)
-
-    def plane(self):
-        return Plane(self.origin, self.a.cross(self.b))
+class Triangle(Parallelogram):
+    def contains(self, p: Point3D) -> bool:
+        raise NotImplemented()
