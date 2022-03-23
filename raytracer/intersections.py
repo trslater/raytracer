@@ -20,8 +20,8 @@ def intersection(o1: Parallelogram|Plane|Ray|Sphere|Triangle,
 # -----------------------------------------------------------------------------
 
 
-def parallelogram_parallelogram_intersection(p1: Parallelogram,
-                                             p2: Parallelogram) -> float:
+def parallelogram_parallelogram_intersection(pa1: Parallelogram,
+                                             pa2: Parallelogram) -> float:
     raise NotImplemented()
 
 
@@ -29,15 +29,15 @@ def parallelogram_plane_intersection(pa: Parallelogram, pl: Plane) -> float:
     raise NotImplemented()
 
 
-def parallelogram_ray_intersection(p: Parallelogram, r: Ray) -> float:
+def parallelogram_ray_intersection(pa: Parallelogram, r: Ray) -> float:
     raise NotImplemented()
 
 
-def parallelogram_sphere_intersection(p: Parallelogram, s: Sphere) -> float:
+def parallelogram_sphere_intersection(pa: Parallelogram, s: Sphere) -> float:
     raise NotImplemented()
 
 
-def parallelogram_triangle_intersection(p: Parallelogram, t: Triangle) -> float:
+def parallelogram_triangle_intersection(pa: Parallelogram, t: Triangle) -> float:
     raise NotImplemented()
 
 
@@ -49,19 +49,19 @@ def plane_parallelogram_intersection(pl: Plane, pa: Parallelogram) -> float:
     return parallelogram_plane_intersection(pa, pl)
 
 
-def plane_plane_intersection(p1: Plane, p2: Plane) -> float:
+def plane_plane_intersection(pl1: Plane, pl2: Plane) -> float:
     raise NotImplemented()
 
 
-def plane_ray_intersection(p: Plane, r: Ray) -> float:
+def plane_ray_intersection(pl: Plane, r: Ray) -> float:
     raise NotImplemented()
 
 
-def plane_sphere_intersection(p: Plane, s: Sphere) -> float:
+def plane_sphere_intersection(pl: Plane, s: Sphere) -> float:
     raise NotImplemented()
 
 
-def plane_triangle_intersection(p: Plane, t: Triangle) -> float:
+def plane_triangle_intersection(pl: Plane, t: Triangle) -> float:
     raise NotImplemented()
 
 
@@ -69,12 +69,12 @@ def plane_triangle_intersection(p: Plane, t: Triangle) -> float:
 # -----------------------------------------------------------------------------
 
 
-def ray_parallelogram_intersection(r: Ray, p: Parallelogram) -> float:
-    return parallelogram_ray_intersection(p, r)
+def ray_parallelogram_intersection(r: Ray, pa: Parallelogram) -> float:
+    return parallelogram_ray_intersection(pa, r)
 
 
-def ray_plane_intersection(r: Ray, p: Plane) -> float:
-    return plane_ray_intersection(p, r)
+def ray_plane_intersection(r: Ray, pl: Plane) -> float:
+    return plane_ray_intersection(pl, r)
 
 
 def ray_ray_intersection(r1: Ray, r2: Ray) -> float:
@@ -93,12 +93,12 @@ def ray_triangle_intersection(r: Ray, t: Triangle) -> float:
 # -----------------------------------------------------------------------------
 
 
-def sphere_parallelogram_intersection(s: Sphere, p: Parallelogram) -> float:
-    return parallelogram_sphere_intersection(p, s)
+def sphere_parallelogram_intersection(s: Sphere, pa: Parallelogram) -> float:
+    return parallelogram_sphere_intersection(pa, s)
 
 
-def sphere_plane_intersection(s: Sphere, p: Plane) -> float:
-    return plane_sphere_intersection(p, s)
+def sphere_plane_intersection(s: Sphere, pl: Plane) -> float:
+    return plane_sphere_intersection(pl, s)
 
 
 def sphere_ray_intersection(s: Sphere, r: Ray) -> float:
@@ -117,12 +117,12 @@ def sphere_triangle_intersection(s: Sphere, t: Triangle) -> float:
 # -----------------------------------------------------------------------------
 
 
-def triangle_parallelogram_intersection(t: Triangle, p: Parallelogram) -> float:
-    return parallelogram_triangle_intersection(p, t)
+def triangle_parallelogram_intersection(t: Triangle, pa: Parallelogram) -> float:
+    return parallelogram_triangle_intersection(pa, t)
 
 
-def triangle_plane_intersection(t: Triangle, p: Plane) -> float:
-    raise plane_triangle_intersection(p, t)
+def triangle_plane_intersection(t: Triangle, pl: Plane) -> float:
+    raise plane_triangle_intersection(pl, t)
 
 
 def triangle_ray_intersection(t: Triangle, r: Ray) -> float:
