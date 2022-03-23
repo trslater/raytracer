@@ -62,3 +62,10 @@ class Parallelogram:
     origin: Point3D
     a: Point3D
     b: Point3D
+
+
+@dataclass(frozen=True)
+class Triangle:
+    a: Point3D
+    b: Point3D
+    c: Point3D
