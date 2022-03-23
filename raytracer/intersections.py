@@ -103,7 +103,8 @@ def ray_plane_intersection(ray: Ray, plane: Plane) -> float:
 def ray_sphere_intersection(ray: Ray, sphere: Sphere) -> float:
     a = ray.direction.dot(ray.direction)
     b = 2*(ray.origin - sphere.center).dot(ray.direction)
-    c = (ray.origin - sphere.center).dot(ray.origin - sphere.center)
+    c = ((ray.origin - sphere.center).dot(ray.origin - sphere.center)
+         - sphere.radius**2)
 
     discriminant = b*b - 4*a*c
 
