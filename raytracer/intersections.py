@@ -37,7 +37,14 @@ def parallelogram_plane_intersection(parallelogram: Parallelogram,
 
 def parallelogram_ray_intersection(parallelogram: Parallelogram,
                                    ray: Ray) -> float:
-    raise NotImplemented()
+    plane = parallelogram.plane()
+    t = plane_ray_intersection(plane, ray)
+    point = ray.point(t)
+
+    if not parallelogram.contains(point):
+        raise NoIntersection()
+
+    return t
 
 
 def parallelogram_sphere_intersection(parallelogram: Parallelogram,
@@ -98,7 +105,14 @@ def ray_sphere_intersection(ray: Ray, sphere: Sphere) -> float:
 
 
 def ray_triangle_intersection(ray: Ray, triangle: Triangle) -> float:
-    raise NotImplemented()
+    plane = triangle.plane()
+    t = plane_ray_intersection(plane, ray)
+    point = ray.point(t)
+
+    if not triangle.contains(point):
+        raise NoIntersection()
+
+    return t
 
 
 # Sphere intersections
