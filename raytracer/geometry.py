@@ -49,3 +49,9 @@ class Point3D:
 class Plane:
     position: Point3D
     normal: Point3D
+
+
+@dataclass(frozen=True)
+class Sphere:
+    center: Point3D
+    radius: float
