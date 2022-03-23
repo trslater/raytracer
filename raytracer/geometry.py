@@ -50,7 +50,7 @@ class Point2D:
         return self._data
 
     def __str__(self) -> str:
-        return ", ".join(str(x) for x in self._data)
+        return "(" + ", ".join(str(x) for x in self._data) + ")"
 
     def __repr__(self) -> str:
         return str(self)
