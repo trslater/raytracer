@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from functools import cached_property
 
 import numpy as np
@@ -42,3 +43,9 @@ class Point3D:
 
     def __repr__(self) -> str:
         return str(self)
+
+
+@dataclass(frozen=True)
+class Plane:
+    position: Point3D
+    normal: Point3D
