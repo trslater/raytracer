@@ -1,6 +1,9 @@
+from __future__ import annotations
 import sys
+from typing import TYPE_CHECKING
 
-from .geometry import Parallelogram, Plane, Ray, Sphere, Triangle
+if TYPE_CHECKING:
+    from .geometry import Parallelogram, Plane, Ray, Sphere, Triangle
 
 
 class NoIntersection(Exception):
