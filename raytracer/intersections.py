@@ -1,4 +1,5 @@
 from __future__ import annotations
+from math import sqrt
 import sys
 from typing import TYPE_CHECKING
 
@@ -100,7 +101,24 @@ def ray_plane_intersection(ray: Ray, plane: Plane) -> float:
 
 
 def ray_sphere_intersection(ray: Ray, sphere: Sphere) -> float:
-    raise NotImplemented()
+    a = ray.direction.dot(ray.direction)
+    b = 2*(ray.origin - sphere.center).dot(ray.direction)
+    c = (ray.origin - sphere.center).dot(ray.origin - sphere.center)
+
+    discriminant = b*b - 4*a*c
+
+    # Misses sphere
+    if discriminant < 0:
+        raise NoIntersection()
+
+    # Tangent to sphere surface
+    if discriminant == 0:
+        return -b/(2*a)
+
+    t1 = (-b + sqrt(discriminant))/(2*a)
+    t2 = (-b - sqrt(discriminant))/(2*a)
+
+    return min(t1, t2)
 
 
 def ray_triangle_intersection(ray: Ray, triangle: Triangle) -> float:
