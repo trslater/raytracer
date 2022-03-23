@@ -79,15 +79,15 @@ class Shape:
 
 
 @dataclass(frozen=True)
-class Plane(Shape):
-    position: Point3D
-    normal: Point3D
-
-
-@dataclass(frozen=True)
 class Sphere(Shape):
     center: Point3D
     radius: float
+
+
+@dataclass(frozen=True)
+class Plane(Shape):
+    position: Point3D
+    normal: Point3D
 
 
 @dataclass(frozen=True)
