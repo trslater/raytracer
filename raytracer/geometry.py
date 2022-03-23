@@ -3,6 +3,8 @@ from functools import cached_property
 
 import numpy as np
 
+from .intersections import intersection
+
 
 class Point3D:
     """Convenience wrapper for ndarray"""
@@ -50,11 +52,17 @@ class Plane:
     position: Point3D
     normal: Point3D
 
+    def intersection(self, other) -> float:
+        return intersection(self, other)
+
 
 @dataclass(frozen=True)
 class Sphere:
     center: Point3D
     radius: float
+
+    def intersection(self, other) -> float:
+        return intersection(self, other)
 
 
 @dataclass(frozen=True)
@@ -63,9 +71,15 @@ class Parallelogram:
     a: Point3D
     b: Point3D
 
+    def intersection(self, other) -> float:
+        return intersection(self, other)
+
 
 @dataclass(frozen=True)
 class Triangle:
     a: Point3D
     b: Point3D
     c: Point3D
+
+    def intersection(self, other) -> float:
+        return intersection(self, other)
