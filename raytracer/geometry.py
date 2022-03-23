@@ -7,11 +7,11 @@ import numpy as np
 from .intersections import intersection
 
 
-class Point3D:
+class Point2D:
     """Convenience wrapper for ndarray"""
-
-    def __init__(self, x, y, z) -> None:
-        self._data = np.array((x, y, z))
+    
+    def __init__(self, x, y) -> None:
+        self._data = np.array((x, y))
 
     @property
     def x(self):
@@ -20,10 +20,6 @@ class Point3D:
     @property
     def y(self):
         return self._data[1]
-
-    @property
-    def z(self):
-        return self._data[2]
 
     @cached_property
     def magnitude(self):
@@ -50,17 +46,28 @@ class Point3D:
     def dot(self, other):
         return np.dot(self._data, np.asarray(other))
 
-    def cross(self, other):
-        return self.__class__(*np.cross(self._data, np.asarray(other)))
-
     def __array__(self, dtype=None):
         return self._data
 
     def __str__(self) -> str:
-        return f"({self.x}, {self.y}, {self.z})"
+        return ", ".join(str(x) for x in self._data)
 
     def __repr__(self) -> str:
         return str(self)
+
+
+class Point3D(Point2D):
+    """Convenience wrapper for ndarray"""
+
+    def __init__(self, x, y, z) -> None:
+        self._data = np.array((x, y, z))
+
+    @property
+    def z(self):
+        return self._data[2]
+
+    def cross(self, other):
+        return self.__class__(*np.cross(self._data, np.asarray(other)))
 
 
 @dataclass(frozen=True)
