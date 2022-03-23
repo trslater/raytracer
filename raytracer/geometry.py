@@ -64,6 +64,15 @@ class Point3D:
 
 
 @dataclass(frozen=True)
+class Ray:
+    origin: Point3D
+    direction: Point3D
+
+    def point(self, t):
+        return self.origin + t*self.direction
+
+
+@dataclass(frozen=True)
 class Plane:
     position: Point3D
     normal: Point3D
