@@ -57,8 +57,9 @@ def plane_plane_intersection(pl1: Plane, pl2: Plane) -> float:
     raise NotImplemented()
 
 
-def plane_ray_intersection(pl: Plane, r: Ray) -> float:
-    raise NotImplemented()
+def plane_ray_intersection(plane: Plane, ray: Ray) -> float:
+    return ((plane.position - ray.origin).dot(plane.normal)
+            /(ray.dot(plane.normal)))
 
 
 def plane_sphere_intersection(pl: Plane, s: Sphere) -> float:
