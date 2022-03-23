@@ -25,7 +25,6 @@ class Point3D:
     def norm(self):
         return np.linalg.norm(self._data)
 
-    @cached_property
     def normalized(self):
         return self.__class__(*(self._data/self.norm))
 
