@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from functools import cached_property
+from numbers import Number
 
 import numpy as np
 
@@ -30,6 +31,21 @@ class Point3D:
 
     def normalized(self):
         return self.__class__(*(self._data/self.norm))
+
+    def __add__(self, other):
+        return self.__class__(self._data + np.asarray(other))
+
+    def __sub__(self, other):
+        return self.__class__(self._data - np.asarray(other))
+
+    def __mul__(self, scalar):
+        if not isinstance(scalar, Number):
+            raise ValueError("Only scalar multiplication allowed")
+            
+        return self.__class__(*(self._data*scalar))
+
+    def __rmul__(self, scalar):
+        return self*scalar
 
     def dot(self, other):
         return np.dot(self._data, np.asarray(other))
