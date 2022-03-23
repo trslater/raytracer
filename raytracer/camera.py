@@ -9,14 +9,13 @@ from .geometry import Point3D
 class Camera:
     position: Point3D
     aspect: float
-    fov: float
-    """Vertical fov"""
+    vfov: float
     near_clip: float
     far_clip: float
 
     @cached_property
     def image_height(self) -> float:
-        return 2*self.near_clip*tan(self.fov/2)
+        return 2*self.near_clip*tan(self.vfov/2)
 
     @cached_property
     def image_width(self) -> float:
@@ -27,4 +26,4 @@ class Camera:
         # For now, to simplify, camera always looks in positive z direction
         return Point3D(self.position.x - self.image_width/2,
                        self.position.y + self.image_height/2,
-                       self.position.z + self.far_clip)
+                       self.position.z + self.near_clip)
