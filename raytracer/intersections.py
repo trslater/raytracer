@@ -1,8 +1,19 @@
+import sys
+
 from .geometry import Parallelogram, Plane, Ray, Sphere, Triangle
 
 
-def intersection(o1, o2) -> float:
-    raise NotImplemented()
+def intersection(o1: Parallelogram|Plane|Ray|Sphere|Triangle,
+                 o2: Parallelogram|Plane|Ray|Sphere|Triangle) -> float:
+    o1_type = type(o1).__name__.lower()
+    o2_type = type(o2).__name__.lower()
+    
+    function_name = f"{o1_type}_{o2_type}_intersection"
+    current_module = sys.modules[__name__]
+
+    function = getattr(current_module, function_name)
+
+    return function(o1, o2)
 
 
 # Parallelogram intersections
