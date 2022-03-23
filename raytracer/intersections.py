@@ -116,6 +116,7 @@ def ray_sphere_intersection(ray: Ray, sphere: Sphere) -> float:
     if discriminant == 0:
         return -b/(2*a)
 
+    # Goes through sphere, i.e., two intersections
     t1 = (-b + sqrt(discriminant))/(2*a)
     t2 = (-b - sqrt(discriminant))/(2*a)
 
