@@ -74,12 +74,18 @@ class Parallelogram:
     def intersection(self, other) -> float:
         return intersection(self, other)
 
+    def plane(self):
+        return Plane(self.origin, self.a.cross(self.b))
+
 
 @dataclass(frozen=True)
 class Triangle:
+    origin: Point3D
     a: Point3D
     b: Point3D
-    c: Point3D
 
     def intersection(self, other) -> float:
         return intersection(self, other)
+
+    def plane(self):
+        return Plane(self.origin, self.a.cross(self.b))
