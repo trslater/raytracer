@@ -99,10 +99,6 @@ def ray_plane_intersection(ray: Ray, plane: Plane) -> float:
     return plane_ray_intersection(plane, ray)
 
 
-def ray_ray_intersection(ray_1: Ray, ray_2: Ray) -> float:
-    raise NotImplemented()
-
-
 def ray_sphere_intersection(ray: Ray, sphere: Sphere) -> float:
     raise NotImplemented()
 
