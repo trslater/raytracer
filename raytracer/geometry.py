@@ -55,3 +55,10 @@ class Plane:
 class Sphere:
     center: Point3D
     radius: float
+
+
+@dataclass(frozen=True)
+class Parallelogram:
+    origin: Point3D
+    a: Point3D
+    b: Point3D
