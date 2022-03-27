@@ -1,15 +1,18 @@
 from dataclasses import dataclass
 from functools import cached_property
+from math import sqrt
 from numbers import Number
 
 import numpy as np
 
-from .intersections import intersection
+
+class NoIntersection(Exception):
+    pass
 
 
 class Point2D:
     """Convenience wrapper for ndarray"""
-    
+
     def __init__(self, x, y) -> None:
         self._data = np.array((x, y))
 
@@ -78,11 +81,46 @@ class Ray:
     def point(self, t):
         return self.origin + t*self.direction
 
+    def intersection(self, shape) -> float:
+        if isinstance(shape, Sphere):
+            a = self.direction.dot(self.direction)
+            b = 2*(self.origin - shape.center).dot(self.direction)
+            c = ((self.origin - shape.center).dot(self.origin - shape.center)
+                - shape.radius**2)
+
+            discriminant = b*b - 4*a*c
+
+            # Misses sphere
+            if discriminant < 0:
+                raise NoIntersection()
+
+            # Tangent to sphere surface
+            if discriminant == 0:
+                return -b/(2*a)
+
+            # Goes through sphere, i.e., two intersections
+            t1 = (-b + sqrt(discriminant))/(2*a)
+            t2 = (-b - sqrt(discriminant))/(2*a)
+
+            return min(t1, t2)
+
+        elif isinstance(shape, Plane):
+            return ((shape.position - self.origin).dot(shape.normal)
+                    /(self.dot(shape.normal)))
+
+        elif isinstance(shape, Parallelogram) or isinstance(shape, Triangle):
+            t = self.intersection(shape.plane())
+            point = self.point(t)
+
+            if not shape.contains(point):
+                raise NoIntersection()
+
+            return t
+
 
 @dataclass(frozen=True)
 class Shape:
-    def intersection(self, other) -> float:
-        return intersection(self, other)
+    pass
 
 
 @dataclass(frozen=True)
