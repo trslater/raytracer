@@ -108,11 +108,13 @@ class Ray:
             return ((shape.position - self.origin).dot(shape.normal)
                     /(self.dot(shape.normal)))
 
+        # Triangles and parallelograms are checked the same way, the 'in'
+        # checking is just different
         elif isinstance(shape, Parallelogram) or isinstance(shape, Triangle):
             t = self.intersection(shape.plane())
             point = self.point(t)
 
-            if not shape.contains(point):
+            if point not in shape:
                 raise NoIntersection()
 
             return t
@@ -141,7 +143,7 @@ class Parallelogram(Shape):
     a: Point3D
     b: Point3D
 
-    def contains(self, p: Point3D) -> bool:
+    def __contains__(self, p: Point3D) -> bool:
         raise NotImplemented()
 
     def plane(self):
@@ -150,5 +152,5 @@ class Parallelogram(Shape):
 
 @dataclass(frozen=True)
 class Triangle(Parallelogram):
-    def contains(self, p: Point3D) -> bool:
+    def __contains__(self, p: Point3D) -> bool:
         raise NotImplemented()
