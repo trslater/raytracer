@@ -95,80 +95,102 @@ class Ray:
 
     def intersection(self, shape) -> float:
         if isinstance(shape, Sphere):
-            a = self.direction.dot(self.direction)
-            b = 2*(self.origin - shape.center).dot(self.direction)
-            c = ((self.origin - shape.center).dot(self.origin - shape.center)
-                - shape.radius**2)
+            return self._sphere_intersection(shape)
 
-            discriminant = b*b - 4*a*c
+        if isinstance(shape, Plane):
+            return self._plane_intersection(shape)
 
-            # Misses sphere
-            if discriminant < 0:
-                raise NoIntersection()
+        if isinstance(shape, Polygon):
+            return self._polygon_intersection(shape)
 
-            # Tangent to sphere surface
-            if discriminant == 0:
-                return -b/(2*a)
+    def _sphere_intersection(self, sphere):
+        a = self.direction.dot(self.direction)
+        b = 2*(self.origin - sphere.center).dot(self.direction)
+        c = ((self.origin - sphere.center).dot(self.origin - sphere.center)
+            - sphere.radius**2)
 
-            # Goes through sphere, i.e., two intersections
-            t1 = (-b + sqrt(discriminant))/(2*a)
-            t2 = (-b - sqrt(discriminant))/(2*a)
+        discriminant = b*b - 4*a*c
 
-            return min(t1, t2)
+        # Misses sphere
+        if discriminant < 0:
+            raise NoIntersection()
 
-        elif isinstance(shape, Plane):
-            return ((shape.position - self.origin).dot(shape.normal)
-                    /(self.dot(shape.normal)))
+        # Tangent to sphere surface
+        if discriminant == 0:
+            return -b/(2*a)
 
-        # Triangles and parallelograms are checked the same way, the 'in'
-        # checking is just different
-        elif isinstance(shape, Parallelogram) or isinstance(shape, Triangle):
-            t = self.intersection(shape.plane())
-            point = self.point(t)
+        # Goes through sphere, i.e., two intersections
+        t1 = (-b + sqrt(discriminant))/(2*a)
+        t2 = (-b - sqrt(discriminant))/(2*a)
 
-            if point not in shape:
-                raise NoIntersection()
+        return min(t1, t2)
+    
+    def _plane_intersection(self, plane):
+        return ((plane.point - self.origin).dot(plane.normal)
+                /(self.dot(plane.normal)))
+    
+    def _polygon_intersection(self, polygon):
+        t = self.intersection(polygon.plane())
+        point = self.point(t)
 
-            return t
+        # Each polygon provides its own point in polygon algorithm
+        if point not in polygon:
+            raise NoIntersection()
+
+        return t
 
 
-@dataclass(frozen=True)
 class Shape:
     pass
 
 
-@dataclass(frozen=True)
 class Sphere(Shape):
-    center: Point3D
-    radius: float
+    def __init__(self, center: Point3D, radius: float) -> None:
+        self.center = center
+        self.radius = radius
 
 
-@dataclass(frozen=True)
 class Plane(Shape):
-    position: Point3D
-    normal: Point3D
+    def __init__(self, normal: Point3D, point: Point3D) -> None:
+        self.normal = normal
+        self.point = point
 
 
-@dataclass(frozen=True)
-class Parallelogram(Shape):
-    origin: Point3D
-    a: Point3D
-    b: Point3D
+class Polygon(Shape):
+    def __init__(self, *points: Point3D) -> None:
+        if len(points) < 3:
+            raise ValueError()
 
-    def __contains__(self, point: Point3D) -> bool:
-        u = (self.a - self.origin).component(point - self.origin)
-        v = (self.b - self.origin).component(point - self.origin)
-
-        return (0 <= u <= 1) and (0 <= v <= 1)
+        self._points = points
 
     def plane(self):
-        return Plane(self.origin, self.a.cross(self.b))
+        return Plane(self._points[0],
+                     (self._points[1] - self._points[0])
+                     .cross(self._points[2] - self._points[0]))
 
 
-@dataclass(frozen=True)
-class Triangle(Parallelogram):
+class Triangle(Polygon):
+    def __init__(self, a: Point3D, b: Point3D, c: Point3D) -> None:
+        self.a = a
+        self.b = b
+        self.c = c
+
+        super().__init__(*(a, b, c))
+
     def __contains__(self, point: Point3D) -> bool:
-        u = (self.a - self.origin).component(point - self.origin)
-        v = (self.b - self.origin).component(point - self.origin)
+        u = (self.b - self.a).component(point - self.a)
+        v = (self.c - self.a).component(point - self.a)
 
         return (0 <= u <= 1) and (0 <= v <= 1) and (0 <= 1 - u - v <= 1)
+
+
+class Parallelogram(Triangle):
+    @property
+    def d(self):
+        return self.b + self.c - self.a
+
+    def __contains__(self, point: Point3D) -> bool:
+        u = (self.b - self.a).component(point - self.a)
+        v = (self.c - self.a).component(point - self.a)
+
+        return (0 <= u <= 1) and (0 <= v <= 1)
