@@ -144,7 +144,7 @@ class Parallelogram(Shape):
     b: Point3D
 
     def __contains__(self, p: Point3D) -> bool:
-        raise NotImplemented()
+        raise NotImplementedError()
 
     def plane(self):
         return Plane(self.origin, self.a.cross(self.b))
@@ -153,4 +153,4 @@ class Parallelogram(Shape):
 @dataclass(frozen=True)
 class Triangle(Parallelogram):
     def __contains__(self, p: Point3D) -> bool:
-        raise NotImplemented()
+        raise NotImplementedError()
