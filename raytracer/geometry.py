@@ -46,8 +46,20 @@ class Point2D:
     def __rmul__(self, scalar):
         return self*scalar
 
+    def __truediv__(self, scalar):
+        if not isinstance(scalar, Number):
+            raise ValueError("Only scalar division allowed")
+            
+        return self.__class__(*(self._data/scalar))
+
     def dot(self, other):
         return np.dot(self._data, np.asarray(other))
+
+    def component(self, other):
+        return self.dot(other)/self.dot(self)
+
+    def projection(self, other):
+        return self.component(other)*self.normalized()
 
     def __array__(self, dtype=None):
         return self._data
@@ -143,8 +155,11 @@ class Parallelogram(Shape):
     a: Point3D
     b: Point3D
 
-    def __contains__(self, p: Point3D) -> bool:
-        raise NotImplementedError()
+    def __contains__(self, point: Point3D) -> bool:
+        u = (self.a - self.origin).component(point - self.origin)
+        v = (self.b - self.origin).component(point - self.origin)
+
+        return (0 <= u <= 1) and (0 <= v <= 1)
 
     def plane(self):
         return Plane(self.origin, self.a.cross(self.b))
@@ -152,5 +167,8 @@ class Parallelogram(Shape):
 
 @dataclass(frozen=True)
 class Triangle(Parallelogram):
-    def __contains__(self, p: Point3D) -> bool:
-        raise NotImplementedError()
+    def __contains__(self, point: Point3D) -> bool:
+        u = (self.a - self.origin).component(point - self.origin)
+        v = (self.b - self.origin).component(point - self.origin)
+
+        return (0 <= u <= 1) and (0 <= v <= 1) and (0 <= 1 - u - v <= 1)
