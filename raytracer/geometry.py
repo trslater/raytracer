@@ -159,8 +159,8 @@ class Sphere:
 
 @dataclass(frozen=True)
 class Plane:
-    normal: Point3D
     point: Point3D
+    normal: Point3D
 
 
 class Polygon:
