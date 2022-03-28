@@ -140,23 +140,19 @@ class Ray:
         return t
 
 
-class Shape:
-    pass
+@dataclass(frozen=True)
+class Sphere:
+    center: Point3D
+    radius: float
 
 
-class Sphere(Shape):
-    def __init__(self, center: Point3D, radius: float) -> None:
-        self.center = center
-        self.radius = radius
+@dataclass(frozen=True)
+class Plane:
+    normal: Point3D
+    point: Point3D
 
 
-class Plane(Shape):
-    def __init__(self, normal: Point3D, point: Point3D) -> None:
-        self.normal = normal
-        self.point = point
-
-
-class Polygon(Shape):
+class Polygon:
     def __init__(self, *points: Point3D) -> None:
         if len(points) < 3:
             raise ValueError()
