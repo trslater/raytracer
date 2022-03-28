@@ -32,10 +32,10 @@ class Point2D:
         return self.__class__(*(self._data/self.magnitude))
 
     def __add__(self, other):
-        return self.__class__(self._data + np.asarray(other))
+        return self.__class__(*(self._data + np.asarray(other)))
 
     def __sub__(self, other):
-        return self.__class__(self._data - np.asarray(other))
+        return self.__class__(*(self._data - np.asarray(other)))
 
     def __mul__(self, scalar):
         if not isinstance(scalar, Number):
