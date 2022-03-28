@@ -141,9 +141,20 @@ class Ray:
 
 
 @dataclass(frozen=True)
+class AxisAlignedBox:
+    mined: Point3D
+    maxed: Point3D
+
+
+@dataclass(frozen=True)
 class Sphere:
     center: Point3D
     radius: float
+
+    def bounding_box(self) -> AxisAlignedBox:
+        return AxisAlignedBox(
+            self.center - Point3D(self.radius, self.radius, self.radius),
+            self.center + Point3D(self.radius, self.radius, self.radius))
 
 
 @dataclass(frozen=True)
@@ -163,6 +174,15 @@ class Polygon:
         return Plane(self._points[0],
                      (self._points[1] - self._points[0])
                      .cross(self._points[2] - self._points[0]))
+
+    def bounding_box(self) -> AxisAlignedBox:
+        return AxisAlignedBox(
+            Point3D(min(p.x for p in self._points),
+                    min(p.y for p in self._points),
+                    min(p.z for p in self._points)),
+            Point3D(max(p.x for p in self._points),
+                    max(p.y for p in self._points),
+                    max(p.z for p in self._points)))
 
 
 class Triangle(Polygon):
