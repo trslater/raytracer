@@ -2,11 +2,12 @@ from dataclasses import dataclass
 from functools import cached_property
 from math import tan
 
-from .geometry import Point3D
+from .geometry import Plane, Point3D
 
 
 @dataclass(frozen=True)
 class Camera:
+    """Near/far clip should be magnitudes. They will be """
     position: Point3D
     aspect: float
     vfov: float
@@ -23,7 +24,18 @@ class Camera:
 
     @cached_property
     def image_origin(self):
-        # For now, to simplify, camera always looks in positive z direction
-        return Point3D(self.position.x - self.image_width/2,
-                       self.position.y + self.image_height/2,
-                       self.position.z + self.near_clip)
+        # For now, to simplify, camera always looks in negative z direction
+        # Origin in center of image
+        return Point3D(self.position.x, self.position.y,
+                       self.position.z - self.near_clip)
+
+    @cached_property
+    def near_plane(self) -> Plane:
+        return Plane(self.image_origin, Point3D(0, 0, -1))
+
+    @cached_property
+    def far_plane(self) -> Plane:
+        return Plane(Point3D(self.position.x, self.position.y,
+                             self.position.z - self.far_clip),
+                     Point3D(0, 0, -1))
+
