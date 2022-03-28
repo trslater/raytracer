@@ -8,6 +8,7 @@ from .geometry import Plane, Point3D
 @dataclass(frozen=True)
 class Camera:
     """Near/far clip should be magnitudes. They will be """
+    
     position: Point3D
     aspect: float
     vfov: float
