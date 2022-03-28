@@ -1,6 +1,7 @@
 from functools import cached_property
 
 import numpy as np
+from PIL import Image as Saver
 
 from .camera import Camera
 from .geometry import NoIntersection, Point3D, Ray
@@ -21,12 +22,11 @@ class Image:
 
         self.scene = scene
         self.camera = camera
-        self.width = width
-        self.height = height
+        self.width = int(width)
+        self.height = int(height)
 
         self.pixel_colors = np.ndarray((self.height, self.width, 4))
 
-    @cached_property
     def pixel_center(self, i, j):
         x = self.pixel_width*((self.width - 1)/2 - j)
         y = self.pixel_height*((self.height - 1)/2 - i)
@@ -45,8 +45,8 @@ class Image:
         for i in range(self.height):
             for j in range(self.width):
                 ray_direction = (self.pixel_center(i, j)
-                                 - self.camera.origin).normalized()
-                ray = Ray(self.camera.origin, ray_direction)
+                                 - self.camera.position).normalized()
+                ray = Ray(self.camera.position, ray_direction)
 
                 for obj in self.scene.objects:
                     try:
@@ -59,4 +59,4 @@ class Image:
                         self.pixel_colors[i][j] = (0, 0, 0, 1)
 
     def save(self, file_name):
-        Image.fromarray(np.uint8(self.pixel_colors)).save(f"{file_name}.png")
+        Saver.fromarray(np.uint8(self.pixel_colors)).save(f"{file_name}.png")
