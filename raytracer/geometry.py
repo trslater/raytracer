@@ -193,9 +193,25 @@ class Triangle(Polygon):
 
         super().__init__(*(a, b, c))
 
+    def uv(self, point):
+        ab = self.b - self.a
+        ac = self.c - self.a
+
+        determinant = ab.x*ac.y - ab.y*ac.x
+
+        # ab and ac are colinear
+        if determinant == 0:
+            return False
+
+        ap = point - self.a
+
+        u = (ap.x*ac.y - ap.y*ac.x)/determinant
+        v = (ab.x*ap.y - ab.y*ap.x)/determinant
+
+        return u, v
+
     def __contains__(self, point: Point3D) -> bool:
-        u = (self.b - self.a).component(point - self.a)
-        v = (self.c - self.a).component(point - self.a)
+        u, v = self.uv(point)
 
         return (0 <= u <= 1) and (0 <= v <= 1) and (0 <= 1 - u - v <= 1)
 
@@ -206,7 +222,6 @@ class Parallelogram(Triangle):
         return self.b + self.c - self.a
 
     def __contains__(self, point: Point3D) -> bool:
-        u = (self.b - self.a).component(point - self.a)
-        v = (self.c - self.a).component(point - self.a)
+        u, v = self.uv(point)
 
         return (0 <= u <= 1) and (0 <= v <= 1)
