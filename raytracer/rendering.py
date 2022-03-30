@@ -29,7 +29,7 @@ class Image:
 
     def pixel_center(self, i, j) -> Point3D:
         x = self.pixel_width*((self.width - 1)/2 - j)
-        y = self.pixel_height*((self.height - 1)/2 - i)
+        y = self.pixel_height*(i - (self.height - 1)/2)
 
         return Point3D(x, y, self.camera.position.z - self.camera.near_clip)
 
