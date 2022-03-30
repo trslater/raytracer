@@ -27,21 +27,21 @@ class Image:
 
         self.pixel_colors = np.ndarray((self.height, self.width, 4))
 
-    def pixel_center(self, i, j):
+    def pixel_center(self, i, j) -> Point3D:
         x = self.pixel_width*((self.width - 1)/2 - j)
         y = self.pixel_height*((self.height - 1)/2 - i)
 
-        return Point3D(x, y, -self.camera.near_clip)
+        return Point3D(x, y, self.camera.position.z - self.camera.near_clip)
 
     @cached_property
-    def pixel_width(self):
+    def pixel_width(self) -> float:
         return self.camera.near_clip_width/self.width
 
     @cached_property
-    def pixel_height(self):
+    def pixel_height(self) -> float:
         return self.camera.near_clip_height/self.height
 
-    def render(self):
+    def render(self) -> None:
         for i in range(self.height):
             for j in range(self.width):
                 ray_direction = (self.pixel_center(i, j)
