@@ -131,7 +131,7 @@ class Ray:
     
     def _plane_intersection(self, plane):
         return ((plane.point - self.origin).dot(plane.normal)
-                /(self.dot(plane.normal)))
+                /self.direction.dot(plane.normal))
     
     def _polygon_intersection(self, polygon):
         t = self.intersection(polygon.plane())
