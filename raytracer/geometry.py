@@ -194,6 +194,9 @@ class Triangle(Polygon):
         super().__init__(*(a, b, c))
 
     def uv(self, point):
+        """This only works when point is already known to be in the plane of
+        the triangle."""
+
         ab = self.b - self.a
         ac = self.c - self.a
 
