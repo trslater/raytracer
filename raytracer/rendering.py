@@ -28,8 +28,11 @@ class Image:
         self.pixel_colors = np.ndarray((self.height, self.width, 4))
 
     def pixel_center(self, i, j) -> Point3D:
-        x = self.pixel_width*((self.width - 1)/2 - j)
-        y = self.pixel_height*(i - (self.height - 1)/2)
+        shifted_i = (self.height - 1)/2 - i
+        shifted_j = j - (self.width - 1)/2
+
+        x = self.pixel_width*shifted_j
+        y = self.pixel_height*shifted_i
 
         return Point3D(x, y, self.camera.position.z - self.camera.near_clip)
 
