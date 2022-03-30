@@ -8,4 +8,4 @@ This project is not intended to be a useful, production ray tracer (though it co
 
 ## Status
 
-Sphere rendering with no shading working correctly.
+Sphere and triangle rendering with no shading working correctly.
