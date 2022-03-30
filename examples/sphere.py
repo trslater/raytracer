@@ -6,12 +6,14 @@ from raytracer.scene import Scene
 
 
 def main():
-    s = Scene((Sphere(Point3D(0, 0, 0), 3),))
-    c = Camera(Point3D(0, 0, 10), 1, math.pi/4, 1, 100)
-    i = Image(s, c, width=100)
+    sphere = Sphere(Point3D(0, 0, 0), 3)
+
+    scene = Scene((sphere,))
+    camera = Camera(10, 1, math.pi/4, 1, 100)
+    image = Image(scene, camera, width=100)
     
-    i.render()
-    i.save("test")
+    image.render()
+    image.save("test")
 
 
 if __name__ == "__main__":
