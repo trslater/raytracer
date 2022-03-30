@@ -58,5 +58,7 @@ class Image:
                     else:
                         self.pixel_colors[i][j] = (0, 0, 0, 1)
 
-    def save(self, file_name):
-        Saver.fromarray(np.uint8(self.pixel_colors)).save(f"{file_name}.png")
+    def save(self, file_name) -> None:
+        corrected_pixel_colors = np.uint8(self.pixel_colors*255)
+
+        Saver.fromarray(corrected_pixel_colors).save(f"{file_name}.png")
