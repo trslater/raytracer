@@ -6,6 +6,10 @@ from numbers import Number
 import numpy as np
 
 
+class Colinear(Exception):
+    pass
+
+
 class NoIntersection(Exception):
     pass
 
@@ -204,7 +208,7 @@ class Triangle(Polygon):
 
         # ab and ac are colinear
         if determinant == 0:
-            return False
+            raise Colinear("Vectors AB and AC are colinear")
 
         ap = point - self.a
 
@@ -214,7 +218,11 @@ class Triangle(Polygon):
         return u, v
 
     def __contains__(self, point: Point3D) -> bool:
-        u, v = self.uv(point)
+        try:
+            u, v = self.uv(point)
+        
+        except Colinear:
+            return False
 
         return (0 <= u <= 1) and (0 <= v <= 1) and (0 <= 1 - u - v <= 1)
 
