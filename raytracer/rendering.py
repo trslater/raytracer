@@ -51,6 +51,8 @@ class Image:
         return self.camera.near_clip_height/self.height
 
     def render(self) -> None:
+        old_num_bars = -1
+        
         for i in range(self.height):
             for j in range(self.width):
                 ray_direction = (self.pixel_center(i, j)
@@ -67,6 +69,19 @@ class Image:
                     else:
                         self.pixel_colors[i][j] = (1, 1, 1, 1)
                 
+                k = i*self.width + j
+                percent_done = k/self.height/self.width
+                total_bars = 100
+                num_bars = int(total_bars*percent_done)
+
+                # Only print changes
+                if num_bars > old_num_bars:
+                    print((f"{percent_done:4.0%} ["
+                           + "="*num_bars + ">" + " "*(total_bars - num_bars - 1)),
+                          end="]\r")
+                
+                old_num_bars = num_bars
+        
         if self.anti_aliasing:
             self.pixel_colors = self.downsample(self.pixel_colors)
 

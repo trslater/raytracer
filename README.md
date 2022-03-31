@@ -12,14 +12,15 @@ Sphere, triangle, and parallelogram rendering with no shading working correctly.
 
 ## Planned Features
 
--   [x] Triangles
--   [x] Parallelograms
--   [x] Spheres
--   [x] Simple camera
--   [x] Simple renderer
 -   [ ] Ambient shading
 -   [ ] Diffused shading
 -   [ ] Specular shading
 -   [ ] Reflections
 -   [ ] AABB Trees
+-   [x] Triangles
+-   [x] Parallelograms
+-   [x] Spheres
+-   [x] Simple camera
+-   [x] Simple renderer
 -   [x] Anti-aliasing (probably just SSAA)
+-   [x] Progress bar
