@@ -9,3 +9,17 @@ This project is not intended to be a useful, production ray tracer (though it co
 ## Status
 
 Sphere, triangle, and parallelogram rendering with no shading working correctly.
+
+## Planned Features
+
+-   [x] Triangles
+-   [x] Parallelograms
+-   [x] Spheres
+-   [x] Simple camera
+-   [x] Simple renderer
+-   [ ] Ambient shading
+-   [ ] Diffused shading
+-   [ ] Specular shading
+-   [ ] Reflections
+-   [ ] AABB Trees
+-   [x] Anti-aliasing (probably just SSAA)

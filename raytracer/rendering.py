@@ -10,7 +10,8 @@ from .scene import Scene
 
 class Image:
     def __init__(self, scene: Scene, camera: Camera,
-                 width: int=None, height: int=None) -> None:
+                 width: int=None, height: int=None,
+                 anti_aliasing=True) -> None:
         if width != None and height != None:
             raise ValueError("Can only specify height or width, not both")
 
@@ -24,6 +25,11 @@ class Image:
         self.camera = camera
         self.width = int(width)
         self.height = int(height)
+        self.anti_aliasing = anti_aliasing
+        
+        if anti_aliasing:
+            self.width *= 4
+            self.height *= 4
 
         self.pixel_colors = np.ndarray((self.height, self.width, 4))
 
@@ -59,9 +65,15 @@ class Image:
                         self.pixel_colors[i][j] = (0, 0, 0, 0)
 
                     else:
-                        self.pixel_colors[i][j] = (0, 0, 0, 1)
+                        self.pixel_colors[i][j] = (1, 1, 1, 1)
+                
+        if self.anti_aliasing:
+            self.pixel_colors = self.downsample(self.pixel_colors)
 
     def save(self, file_name) -> None:
-        corrected_pixel_colors = np.uint8(self.pixel_colors*255)
+        Saver.fromarray(np.uint8(self.pixel_colors*255)).save(f"{file_name}.png")
 
-        Saver.fromarray(corrected_pixel_colors).save(f"{file_name}.png")
+    def downsample(self, pixel_colors):
+        return (pixel_colors
+                .reshape(self.height//4, 4, self.width//4, 4, 4)
+                .mean(axis=(1, 3)))
