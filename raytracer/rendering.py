@@ -1,5 +1,6 @@
 from functools import cached_property
 import os
+from datetime import datetime
 
 import numpy as np
 from PIL import Image as Saver
@@ -52,7 +53,8 @@ class Image:
         return self.camera.near_clip_height/self.height
 
     def render(self) -> None:
-        progress = Progress(self.width*self.height)
+        progress = Progress(self.width*self.height - 1)
+        start_time = datetime.now()
         
         for i in range(self.height):
             for j in range(self.width):
@@ -74,6 +76,9 @@ class Image:
 
         if self.anti_aliasing:
             self.pixel_colors = self.downsample(self.pixel_colors)
+        
+        elapsed_time = datetime.now() - start_time
+        print(f"Completed in {elapsed_time}")
 
     def save(self, file_name) -> None:
         Saver.fromarray(np.uint8(self.pixel_colors*255)).save(f"{file_name}.png")
@@ -88,7 +93,7 @@ class Progress:
     def __init__(self, max_value) -> None:
         # Options
         self.max_value = max_value
-        self.width = os.get_terminal_size()[0] - 7
+        self.width = os.get_terminal_size()[0] - 8
 
         # Init state
         self.percent_done = 0
@@ -102,8 +107,11 @@ class Progress:
         # Only print changes
         if num_bars > self.num_bars:
             bars = "="*num_bars
-            space = " "*(self.width - num_bars - 1)
+            space = " "*(self.width - num_bars)
 
             print(f"{self.percent_done:4.0%} [{bars}>{space}]", end="\r")
+        
+        if self.percent_done == 1:
+            print()
         
         self.num_bars = num_bars
