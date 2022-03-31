@@ -1,4 +1,5 @@
 from functools import cached_property
+import os
 
 import numpy as np
 from PIL import Image as Saver
@@ -51,7 +52,7 @@ class Image:
         return self.camera.near_clip_height/self.height
 
     def render(self) -> None:
-        old_num_bars = -1
+        progress = Progress(self.width*self.height)
         
         for i in range(self.height):
             for j in range(self.width):
@@ -69,19 +70,8 @@ class Image:
                     else:
                         self.pixel_colors[i][j] = (1, 1, 1, 1)
                 
-                k = i*self.width + j
-                percent_done = k/self.height/self.width
-                total_bars = 100
-                num_bars = int(total_bars*percent_done)
+                progress.update(i*self.width + j)
 
-                # Only print changes
-                if num_bars > old_num_bars:
-                    print((f"{percent_done:4.0%} ["
-                           + "="*num_bars + ">" + " "*(total_bars - num_bars - 1)),
-                          end="]\r")
-                
-                old_num_bars = num_bars
-        
         if self.anti_aliasing:
             self.pixel_colors = self.downsample(self.pixel_colors)
 
@@ -92,3 +82,28 @@ class Image:
         return (pixel_colors
                 .reshape(self.height//4, 4, self.width//4, 4, 4)
                 .mean(axis=(1, 3)))
+
+
+class Progress:
+    def __init__(self, max_value) -> None:
+        # Options
+        self.max_value = max_value
+        self.width = os.get_terminal_size()[0] - 7
+
+        # Init state
+        self.percent_done = 0
+        self.num_bars = -1
+        self.old_num_bars = -1
+
+    def update(self, value):
+        self.percent_done = value/self.max_value
+        num_bars = int(self.percent_done*self.width)
+
+        # Only print changes
+        if num_bars > self.num_bars:
+            bars = "="*num_bars
+            space = " "*(self.width - num_bars - 1)
+
+            print(f"{self.percent_done:4.0%} [{bars}>{space}]", end="\r")
+        
+        self.num_bars = num_bars
