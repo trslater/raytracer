@@ -93,7 +93,7 @@ class Progress:
     def __init__(self, max_value) -> None:
         # Options
         self.max_value = max_value
-        self.width = os.get_terminal_size()[0] - 8
+        self.width = min(os.get_terminal_size()[0] - 8, 50)
 
         # Init state
         self.percent_done = 0
