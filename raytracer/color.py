@@ -1,12 +1,22 @@
-from dataclasses import dataclass
+import numpy as np
 
 
-@dataclass(frozen=True)
 class Color:
-    red: float
-    green: float
-    blue: float
-    alpha: float
+    def __init__(self, r: float, g: float, b: float, a: float) -> None:
+        self.data = np.array((r, g, b, a))
 
-    def __iter__(self) -> tuple[float]:
-        return (self.red, self.green, self.blue, self.alpha)
+    @property
+    def red(self) -> float:
+        return self.data[0]
+
+    @property
+    def green(self) -> float:
+        return self.data[1]
+
+    @property
+    def blue(self) -> float:
+        return self.data[2]
+
+    @property
+    def alpha(self) -> float:
+        return self.data[3]
