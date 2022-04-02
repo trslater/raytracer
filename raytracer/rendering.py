@@ -6,6 +6,7 @@ import numpy as np
 from PIL import Image as Saver
 
 from .camera import Camera
+from .color import Color
 from .geometry import NoIntersection, Point3D, Ray
 from .scene import Scene
 
@@ -67,10 +68,12 @@ class Image:
                         t = ray.intersection(obj)
                     
                     except NoIntersection:
-                        self.pixel_colors[i][j] = (0, 0, 0, 0)
+                        color = Color(0, 0, 0, 0)
 
                     else:
-                        self.pixel_colors[i][j] = (1, 1, 1, 1)
+                        color = Color(1, 1, 1, 1)
+
+                    self.pixel_colors[i][j] = color.data
                 
                 progress.update(i*self.width + j)
 
