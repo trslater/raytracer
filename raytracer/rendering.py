@@ -93,7 +93,7 @@ class Progress:
     def __init__(self, max_value) -> None:
         # Options
         self.max_value = max_value
-        self.width = min(os.get_terminal_size()[0] - 8, 50)
+        self.width = min(os.get_terminal_size()[0] - 19, 50)
 
         # Init state
         self.percent_done = 0
@@ -109,7 +109,7 @@ class Progress:
             bars = "="*num_bars
             space = " "*(self.width - num_bars)
 
-            print(f"{self.percent_done:4.0%} [{bars}>{space}]", end="\r")
+            print(f"Rendering: [{bars}>{space}] {self.percent_done:.0%}", end="\r")
         
         if self.percent_done == 1:
             print()
