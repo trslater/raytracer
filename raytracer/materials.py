@@ -9,3 +9,4 @@ class Material:
     diffusion: float
     specularity: float
     shininess: float
+    opacity: float

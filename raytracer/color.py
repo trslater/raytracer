@@ -2,8 +2,8 @@ import numpy as np
 
 
 class Color:
-    def __init__(self, r: float, g: float, b: float, a: float) -> None:
-        self.data = np.clip(np.array((r, g, b, a)), 0, 1)
+    def __init__(self, r: float, g: float, b: float) -> None:
+        self.data = np.clip(np.array((r, g, b)), 0, 1)
 
     @property
     def red(self) -> float:
@@ -16,10 +16,6 @@ class Color:
     @property
     def blue(self) -> float:
         return self.data[2]
-
-    @property
-    def alpha(self) -> float:
-        return self.data[3]
 
     def __add__(self, other):
         return self.__class__(*(self.data + other.data))
