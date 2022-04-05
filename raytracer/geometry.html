@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="pdoc 10.0.3"/>
+    <meta name="generator" content="pdoc 10.0.4"/>
     <title>raytracer.geometry API documentation</title>
 
     <style>/*! * Bootstrap Reboot v5.0.0 (https://getbootstrap.com/) * Copyright 2011-2021 The Bootstrap Authors * Copyright 2011-2021 Twitter, Inc. * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE) * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md) */*,::after,::before{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;background-color:#fff;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}hr{margin:1rem 0;color:inherit;background-color:currentColor;border:0;opacity:.25}hr:not([size]){height:1px}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2}h1{font-size:calc(1.375rem + 1.5vw)}@media (min-width:1200px){h1{font-size:2.5rem}}h2{font-size:calc(1.325rem + .9vw)}@media (min-width:1200px){h2{font-size:2rem}}h3{font-size:calc(1.3rem + .6vw)}@media (min-width:1200px){h3{font-size:1.75rem}}h4{font-size:calc(1.275rem + .3vw)}@media (min-width:1200px){h4{font-size:1.5rem}}h5{font-size:1.25rem}h6{font-size:1rem}p{margin-top:0;margin-bottom:1rem}abbr[data-bs-original-title],abbr[title]{-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}ol,ul{padding-left:2rem}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:.875em}mark{padding:.2em;background-color:#fcf8e3}sub,sup{position:relative;font-size:.75em;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#0d6efd;text-decoration:underline}a:hover{color:#0a58ca}a:not([href]):not([class]),a:not([href]):not([class]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em;direction:ltr;unicode-bidi:bidi-override}pre{display:block;margin-top:0;margin-bottom:1rem;overflow:auto;font-size:.875em}pre code{font-size:inherit;color:inherit;word-break:normal}code{font-size:.875em;color:#d63384;word-wrap:break-word}a>code{color:inherit}kbd{padding:.2rem .4rem;font-size:.875em;color:#fff;background-color:#212529;border-radius:.2rem}kbd kbd{padding:0;font-size:1em;font-weight:700}figure{margin:0 0 1rem}img,svg{vertical-align:middle}table{caption-side:bottom;border-collapse:collapse}caption{padding-top:.5rem;padding-bottom:.5rem;color:#6c757d;text-align:left}th{text-align:inherit;text-align:-webkit-match-parent}tbody,td,tfoot,th,thead,tr{border-color:inherit;border-style:solid;border-width:0}label{display:inline-block}button{border-radius:0}button:focus:not(:focus-visible){outline:0}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,select{text-transform:none}[role=button]{cursor:pointer}select{word-wrap:normal}select:disabled{opacity:1}[list]::-webkit-calendar-picker-indicator{display:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}::-moz-focus-inner{padding:0;border-style:none}textarea{resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{float:left;width:100%;padding:0;margin-bottom:.5rem;font-size:calc(1.275rem + .3vw);line-height:inherit}@media (min-width:1200px){legend{font-size:1.5rem}}legend+*{clear:left}::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-fields-wrapper,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-text,::-webkit-datetime-edit-year-field{padding:0}::-webkit-inner-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:textfield}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-color-swatch-wrapper{padding:0}::file-selector-button{font:inherit}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}iframe{border:0}summary{display:list-item;cursor:pointer}progress{vertical-align:baseline}[hidden]{display:none!important}</style>
@@ -31,19 +31,139 @@
         <h2>API Documentation</h2>
             <ul class="memberlist">
             <li>
+                    <a class="class" href="#Colinear">Colinear</a>
+                            <ul class="memberlist">
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#NoIntersection">NoIntersection</a>
+                            <ul class="memberlist">
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#Point2D">Point2D</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#Point2D.__init__">Point2D</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Point2D.x">x</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Point2D.y">y</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Point2D.magnitude">magnitude</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Point2D.normalized">normalized</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Point2D.dot">dot</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Point2D.component">component</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Point2D.projection">projection</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
                     <a class="class" href="#Point3D">Point3D</a>
                             <ul class="memberlist">
                         <li>
                                 <a class="function" href="#Point3D.__init__">Point3D</a>
                         </li>
                         <li>
-                                <a class="variable" href="#Point3D.x">x</a>
-                        </li>
-                        <li>
-                                <a class="variable" href="#Point3D.y">y</a>
-                        </li>
-                        <li>
                                 <a class="variable" href="#Point3D.z">z</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Point3D.cross">cross</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#Ray">Ray</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#Ray.__init__">Ray</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Ray.point">point</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Ray.intersection">intersection</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#AxisAlignedBox">AxisAlignedBox</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#AxisAlignedBox.__init__">AxisAlignedBox</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#Sphere">Sphere</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#Sphere.__init__">Sphere</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Sphere.bounding_box">bounding_box</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#Plane">Plane</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#Plane.__init__">Plane</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#Polygon">Polygon</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#Polygon.__init__">Polygon</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Polygon.plane">plane</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Polygon.bounding_box">bounding_box</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#Triangle">Triangle</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#Triangle.__init__">Triangle</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Triangle.uv">uv</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#Parallelogram">Parallelogram</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="variable" href="#Parallelogram.d">d</a>
                         </li>
                 </ul>
 
@@ -67,45 +187,552 @@
                 
                         <details>
             <summary>View Source</summary>
-            <div class="pdoc-code codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">NamedTuple</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">cached_property</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<span class="kn">from</span> <span class="nn">numbers</span> <span class="kn">import</span> <span class="n">Number</span>
+
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
-<span class="k">class</span> <span class="nc">Point3D</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
-    <span class="n">x</span><span class="p">:</span> <span class="nb">float</span>
-    <span class="n">y</span><span class="p">:</span> <span class="nb">float</span>
-    <span class="n">z</span><span class="p">:</span> <span class="nb">float</span>
+<span class="k">class</span> <span class="nc">Colinear</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="k">pass</span>
 
-    <span class="k">def</span> <span class="nf">__array__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span><span class="p">))</span>
+
+<span class="k">class</span> <span class="nc">NoIntersection</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">Point2D</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Convenience wrapper for ndarray&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="nd">@cached_property</span>
+    <span class="k">def</span> <span class="nf">magnitude</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">normalized</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">magnitude</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">other</span><span class="p">)))</span>
+
+    <span class="k">def</span> <span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">other</span><span class="p">)))</span>
+
+    <span class="k">def</span> <span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scalar</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">scalar</span><span class="p">,</span> <span class="n">Number</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Only scalar multiplication allowed&quot;</span><span class="p">)</span>
+            
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">*</span><span class="n">scalar</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="fm">__rmul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scalar</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">*</span><span class="n">scalar</span>
+
+    <span class="k">def</span> <span class="fm">__truediv__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scalar</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">scalar</span><span class="p">,</span> <span class="n">Number</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Only scalar division allowed&quot;</span><span class="p">)</span>
+            
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">/</span><span class="n">scalar</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">dot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">other</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">component</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">projection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__array__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;(&quot;</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Point3D</span><span class="p">(</span><span class="n">Point2D</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Convenience wrapper for ndarray&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">))</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">z</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">cross</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">other</span><span class="p">)))</span>
+
+
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Ray</span><span class="p">:</span>
+    <span class="n">origin</span><span class="p">:</span> <span class="n">Point3D</span>
+    <span class="n">direction</span><span class="p">:</span> <span class="n">Point3D</span>
+
+    <span class="k">def</span> <span class="nf">point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">origin</span> <span class="o">+</span> <span class="n">t</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">direction</span>
+
+    <span class="k">def</span> <span class="nf">intersection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shape</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">Sphere</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sphere_intersection</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">Plane</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_plane_intersection</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">Polygon</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_polygon_intersection</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_sphere_intersection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sphere</span><span class="p">):</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">direction</span><span class="p">)</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">origin</span> <span class="o">-</span> <span class="n">sphere</span><span class="o">.</span><span class="n">center</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">direction</span><span class="p">)</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">origin</span> <span class="o">-</span> <span class="n">sphere</span><span class="o">.</span><span class="n">center</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">origin</span> <span class="o">-</span> <span class="n">sphere</span><span class="o">.</span><span class="n">center</span><span class="p">)</span>
+            <span class="o">-</span> <span class="n">sphere</span><span class="o">.</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">discriminant</span> <span class="o">=</span> <span class="n">b</span><span class="o">*</span><span class="n">b</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span>
+
+        <span class="c1"># Misses sphere</span>
+        <span class="k">if</span> <span class="n">discriminant</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NoIntersection</span><span class="p">()</span>
+
+        <span class="c1"># Tangent to sphere surface</span>
+        <span class="k">if</span> <span class="n">discriminant</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="o">-</span><span class="n">b</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+
+        <span class="c1"># Goes through sphere, i.e., two intersections</span>
+        <span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">discriminant</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+        <span class="n">t2</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">discriminant</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">_plane_intersection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plane</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">((</span><span class="n">plane</span><span class="o">.</span><span class="n">point</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">plane</span><span class="o">.</span><span class="n">normal</span><span class="p">)</span>
+                <span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">direction</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">plane</span><span class="o">.</span><span class="n">normal</span><span class="p">))</span>
+    
+    <span class="k">def</span> <span class="nf">_polygon_intersection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">polygon</span><span class="p">):</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">polygon</span><span class="o">.</span><span class="n">plane</span><span class="p">())</span>
+        <span class="n">point</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">point</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+        <span class="c1"># Each polygon provides its own point in polygon algorithm</span>
+        <span class="k">if</span> <span class="n">point</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">polygon</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NoIntersection</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">t</span>
+
+
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">AxisAlignedBox</span><span class="p">:</span>
+    <span class="n">mined</span><span class="p">:</span> <span class="n">Point3D</span>
+    <span class="n">maxed</span><span class="p">:</span> <span class="n">Point3D</span>
+
+
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Sphere</span><span class="p">:</span>
+    <span class="n">center</span><span class="p">:</span> <span class="n">Point3D</span>
+    <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span>
+
+    <span class="k">def</span> <span class="nf">bounding_box</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AxisAlignedBox</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">AxisAlignedBox</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">center</span> <span class="o">-</span> <span class="n">Point3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">),</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">center</span> <span class="o">+</span> <span class="n">Point3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">))</span>
+
+
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Plane</span><span class="p">:</span>
+    <span class="n">point</span><span class="p">:</span> <span class="n">Point3D</span>
+    <span class="n">normal</span><span class="p">:</span> <span class="n">Point3D</span>
+
+
+<span class="k">class</span> <span class="nc">Polygon</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">points</span><span class="p">:</span> <span class="n">Point3D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_points</span> <span class="o">=</span> <span class="n">points</span>
+
+    <span class="k">def</span> <span class="nf">plane</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Plane</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                     <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                     <span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+    <span class="k">def</span> <span class="nf">bounding_box</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AxisAlignedBox</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">AxisAlignedBox</span><span class="p">(</span>
+            <span class="n">Point3D</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">x</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">),</span>
+                    <span class="nb">min</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">y</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">),</span>
+                    <span class="nb">min</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">z</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">)),</span>
+            <span class="n">Point3D</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">x</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">),</span>
+                    <span class="nb">max</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">y</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">),</span>
+                    <span class="nb">max</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">z</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">)))</span>
+
+
+<span class="k">class</span> <span class="nc">Triangle</span><span class="p">(</span><span class="n">Polygon</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span> <span class="n">Point3D</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Point3D</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span> <span class="n">Point3D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">c</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">uv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;This only works when point is already known to be in the plane of</span>
+<span class="sd">        the triangle.&quot;&quot;&quot;</span>
+
+        <span class="n">ab</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span>
+        <span class="n">ac</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span>
+
+        <span class="n">determinant</span> <span class="o">=</span> <span class="n">ab</span><span class="o">.</span><span class="n">x</span><span class="o">*</span><span class="n">ac</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">ab</span><span class="o">.</span><span class="n">y</span><span class="o">*</span><span class="n">ac</span><span class="o">.</span><span class="n">x</span>
+
+        <span class="c1"># ab and ac are colinear</span>
+        <span class="k">if</span> <span class="n">determinant</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">Colinear</span><span class="p">(</span><span class="s2">&quot;Vectors AB and AC are colinear&quot;</span><span class="p">)</span>
+
+        <span class="n">ap</span> <span class="o">=</span> <span class="n">point</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span>
+
+        <span class="n">u</span> <span class="o">=</span> <span class="p">(</span><span class="n">ap</span><span class="o">.</span><span class="n">x</span><span class="o">*</span><span class="n">ac</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">ap</span><span class="o">.</span><span class="n">y</span><span class="o">*</span><span class="n">ac</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">determinant</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="p">(</span><span class="n">ab</span><span class="o">.</span><span class="n">x</span><span class="o">*</span><span class="n">ap</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">ab</span><span class="o">.</span><span class="n">y</span><span class="o">*</span><span class="n">ap</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">determinant</span>
+
+        <span class="k">return</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span>
+
+    <span class="k">def</span> <span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">:</span> <span class="n">Point3D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">uv</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>
+        
+        <span class="k">except</span> <span class="n">Colinear</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="k">return</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">u</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">v</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">u</span> <span class="o">-</span> <span class="n">v</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Parallelogram</span><span class="p">(</span><span class="n">Triangle</span><span class="p">):</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">d</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span>
+
+    <span class="k">def</span> <span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">:</span> <span class="n">Point3D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">uv</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">u</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">v</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
         </details>
 
             </section>
+                <section id="Colinear">
+                                <div class="attr class">
+        <a class="headerlink" href="#Colinear">#&nbsp;&nbsp</a>
+
+        
+        <span class="def">class</span>
+        <span class="name">Colinear</span><wbr>(<span class="base">builtins.Exception</span>):
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Colinear</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+
+        </details>
+
+            <div class="docstring"><p>Common base class for all non-exit exceptions.</p>
+</div>
+
+
+                            <div class="inherited">
+                                <h5>Inherited Members</h5>
+                                <dl>
+                                    <div><dt>builtins.Exception</dt>
+                                <dd id="Colinear.__init__" class="function">Exception</dd>
+
+            </div>
+            <div><dt>builtins.BaseException</dt>
+                                <dd id="Colinear.with_traceback" class="function">with_traceback</dd>
+                <dd id="Colinear.args" class="variable">args</dd>
+
+            </div>
+                                </dl>
+                            </div>
+                </section>
+                <section id="NoIntersection">
+                                <div class="attr class">
+        <a class="headerlink" href="#NoIntersection">#&nbsp;&nbsp</a>
+
+        
+        <span class="def">class</span>
+        <span class="name">NoIntersection</span><wbr>(<span class="base">builtins.Exception</span>):
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span><span class="k">class</span> <span class="nc">NoIntersection</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+
+        </details>
+
+            <div class="docstring"><p>Common base class for all non-exit exceptions.</p>
+</div>
+
+
+                            <div class="inherited">
+                                <h5>Inherited Members</h5>
+                                <dl>
+                                    <div><dt>builtins.Exception</dt>
+                                <dd id="NoIntersection.__init__" class="function">Exception</dd>
+
+            </div>
+            <div><dt>builtins.BaseException</dt>
+                                <dd id="NoIntersection.with_traceback" class="function">with_traceback</dd>
+                <dd id="NoIntersection.args" class="variable">args</dd>
+
+            </div>
+                                </dl>
+                            </div>
+                </section>
+                <section id="Point2D">
+                                <div class="attr class">
+        <a class="headerlink" href="#Point2D">#&nbsp;&nbsp</a>
+
+        
+        <span class="def">class</span>
+        <span class="name">Point2D</span>:
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Point2D</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Convenience wrapper for ndarray&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="nd">@cached_property</span>
+    <span class="k">def</span> <span class="nf">magnitude</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">normalized</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">magnitude</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">other</span><span class="p">)))</span>
+
+    <span class="k">def</span> <span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">other</span><span class="p">)))</span>
+
+    <span class="k">def</span> <span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scalar</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">scalar</span><span class="p">,</span> <span class="n">Number</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Only scalar multiplication allowed&quot;</span><span class="p">)</span>
+            
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">*</span><span class="n">scalar</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="fm">__rmul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scalar</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">*</span><span class="n">scalar</span>
+
+    <span class="k">def</span> <span class="fm">__truediv__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scalar</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">scalar</span><span class="p">,</span> <span class="n">Number</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Only scalar division allowed&quot;</span><span class="p">)</span>
+            
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">/</span><span class="n">scalar</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">dot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">other</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">component</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">projection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__array__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;(&quot;</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</pre></div>
+
+        </details>
+
+            <div class="docstring"><p>Convenience wrapper for ndarray</p>
+</div>
+
+
+                            <div id="Point2D.__init__" class="classattr">
+                                        <div class="attr function"><a class="headerlink" href="#Point2D.__init__">#&nbsp;&nbsp</a>
+
+        
+            <span class="name">Point2D</span><span class="signature">(x, y)</span>
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+</pre></div>
+
+        </details>
+
+    
+
+                            </div>
+                            <div id="Point2D.x" class="classattr">
+                                            <div class="attr variable"><a class="headerlink" href="#Point2D.x">#&nbsp;&nbsp</a>
+
+        <span class="name">x</span>
+    </div>
+
+    
+    
+
+                            </div>
+                            <div id="Point2D.y" class="classattr">
+                                            <div class="attr variable"><a class="headerlink" href="#Point2D.y">#&nbsp;&nbsp</a>
+
+        <span class="name">y</span>
+    </div>
+
+    
+    
+
+                            </div>
+                            <div id="Point2D.magnitude" class="classattr">
+                                            <div class="attr variable"><a class="headerlink" href="#Point2D.magnitude">#&nbsp;&nbsp</a>
+
+        <span class="name">magnitude</span>
+    </div>
+
+    
+    
+
+                            </div>
+                            <div id="Point2D.normalized" class="classattr">
+                                        <div class="attr function"><a class="headerlink" href="#Point2D.normalized">#&nbsp;&nbsp</a>
+
+        
+            <span class="def">def</span>
+            <span class="name">normalized</span><span class="signature">(self)</span>:
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">normalized</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">magnitude</span><span class="p">))</span>
+</pre></div>
+
+        </details>
+
+    
+
+                            </div>
+                            <div id="Point2D.dot" class="classattr">
+                                        <div class="attr function"><a class="headerlink" href="#Point2D.dot">#&nbsp;&nbsp</a>
+
+        
+            <span class="def">def</span>
+            <span class="name">dot</span><span class="signature">(self, other)</span>:
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">dot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">other</span><span class="p">))</span>
+</pre></div>
+
+        </details>
+
+    
+
+                            </div>
+                            <div id="Point2D.component" class="classattr">
+                                        <div class="attr function"><a class="headerlink" href="#Point2D.component">#&nbsp;&nbsp</a>
+
+        
+            <span class="def">def</span>
+            <span class="name">component</span><span class="signature">(self, other)</span>:
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">component</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</pre></div>
+
+        </details>
+
+    
+
+                            </div>
+                            <div id="Point2D.projection" class="classattr">
+                                        <div class="attr function"><a class="headerlink" href="#Point2D.projection">#&nbsp;&nbsp</a>
+
+        
+            <span class="def">def</span>
+            <span class="name">projection</span><span class="signature">(self, other)</span>:
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">projection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span>
+</pre></div>
+
+        </details>
+
+    
+
+                            </div>
+                </section>
                 <section id="Point3D">
                                 <div class="attr class">
         <a class="headerlink" href="#Point3D">#&nbsp;&nbsp</a>
 
         
         <span class="def">class</span>
-        <span class="name">Point3D</span><wbr>(<span class="base">typing.NamedTuple</span>):
+        <span class="name">Point3D</span><wbr>(<span class="base"><a href="#Point2D">Point2D</a></span>):
     </div>
 
             <details>
             <summary>View Source</summary>
-            <div class="pdoc-code codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Point3D</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
-    <span class="n">x</span><span class="p">:</span> <span class="nb">float</span>
-    <span class="n">y</span><span class="p">:</span> <span class="nb">float</span>
-    <span class="n">z</span><span class="p">:</span> <span class="nb">float</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Point3D</span><span class="p">(</span><span class="n">Point2D</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Convenience wrapper for ndarray&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">__array__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span><span class="p">))</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">))</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">z</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">cross</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">other</span><span class="p">)))</span>
 </pre></div>
 
         </details>
 
-            <div class="docstring"><p>Point3D(x, y, z)</p>
+            <div class="docstring"><p>Convenience wrapper for ndarray</p>
 </div>
 
 
@@ -113,47 +740,554 @@
                                         <div class="attr function"><a class="headerlink" href="#Point3D.__init__">#&nbsp;&nbsp</a>
 
         
-            <span class="name">Point3D</span><span class="signature">(x: float, y: float, z: float)</span>
+            <span class="name">Point3D</span><span class="signature">(x, y, z)</span>
     </div>
 
-    
-            <div class="docstring"><p>Create new instance of Point3D(x, y, z)</p>
-</div>
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">))</span>
+</pre></div>
 
-
-                            </div>
-                            <div id="Point3D.x" class="classattr">
-                                            <div class="attr variable"><a class="headerlink" href="#Point3D.x">#&nbsp;&nbsp</a>
-
-        <span class="name">x</span><span class="annotation">: float</span>
-    </div>
+        </details>
 
     
-            <div class="docstring"><p>Alias for field number 0</p>
-</div>
-
-
-                            </div>
-                            <div id="Point3D.y" class="classattr">
-                                            <div class="attr variable"><a class="headerlink" href="#Point3D.y">#&nbsp;&nbsp</a>
-
-        <span class="name">y</span><span class="annotation">: float</span>
-    </div>
-
-    
-            <div class="docstring"><p>Alias for field number 1</p>
-</div>
-
 
                             </div>
                             <div id="Point3D.z" class="classattr">
                                             <div class="attr variable"><a class="headerlink" href="#Point3D.z">#&nbsp;&nbsp</a>
 
-        <span class="name">z</span><span class="annotation">: float</span>
+        <span class="name">z</span>
     </div>
 
     
-            <div class="docstring"><p>Alias for field number 2</p>
+    
+
+                            </div>
+                            <div id="Point3D.cross" class="classattr">
+                                        <div class="attr function"><a class="headerlink" href="#Point3D.cross">#&nbsp;&nbsp</a>
+
+        
+            <span class="def">def</span>
+            <span class="name">cross</span><span class="signature">(self, other)</span>:
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">cross</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">other</span><span class="p">)))</span>
+</pre></div>
+
+        </details>
+
+    
+
+                            </div>
+                            <div class="inherited">
+                                <h5>Inherited Members</h5>
+                                <dl>
+                                    <div><dt><a href="#Point2D">Point2D</a></dt>
+                                <dd id="Point3D.x" class="variable"><a href="#Point2D.x">x</a></dd>
+                <dd id="Point3D.y" class="variable"><a href="#Point2D.y">y</a></dd>
+                <dd id="Point3D.magnitude" class="variable"><a href="#Point2D.magnitude">magnitude</a></dd>
+                <dd id="Point3D.normalized" class="function"><a href="#Point2D.normalized">normalized</a></dd>
+                <dd id="Point3D.dot" class="function"><a href="#Point2D.dot">dot</a></dd>
+                <dd id="Point3D.component" class="function"><a href="#Point2D.component">component</a></dd>
+                <dd id="Point3D.projection" class="function"><a href="#Point2D.projection">projection</a></dd>
+
+            </div>
+                                </dl>
+                            </div>
+                </section>
+                <section id="Ray">
+                                <div class="attr class">
+        <a class="headerlink" href="#Ray">#&nbsp;&nbsp</a>
+
+                <div class="decorator">@dataclass(frozen=True)</div>
+
+        <span class="def">class</span>
+        <span class="name">Ray</span>:
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Ray</span><span class="p">:</span>
+    <span class="n">origin</span><span class="p">:</span> <span class="n">Point3D</span>
+    <span class="n">direction</span><span class="p">:</span> <span class="n">Point3D</span>
+
+    <span class="k">def</span> <span class="nf">point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">origin</span> <span class="o">+</span> <span class="n">t</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">direction</span>
+
+    <span class="k">def</span> <span class="nf">intersection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shape</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">Sphere</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sphere_intersection</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">Plane</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_plane_intersection</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">Polygon</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_polygon_intersection</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_sphere_intersection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sphere</span><span class="p">):</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">direction</span><span class="p">)</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">origin</span> <span class="o">-</span> <span class="n">sphere</span><span class="o">.</span><span class="n">center</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">direction</span><span class="p">)</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">origin</span> <span class="o">-</span> <span class="n">sphere</span><span class="o">.</span><span class="n">center</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">origin</span> <span class="o">-</span> <span class="n">sphere</span><span class="o">.</span><span class="n">center</span><span class="p">)</span>
+            <span class="o">-</span> <span class="n">sphere</span><span class="o">.</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">discriminant</span> <span class="o">=</span> <span class="n">b</span><span class="o">*</span><span class="n">b</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span>
+
+        <span class="c1"># Misses sphere</span>
+        <span class="k">if</span> <span class="n">discriminant</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NoIntersection</span><span class="p">()</span>
+
+        <span class="c1"># Tangent to sphere surface</span>
+        <span class="k">if</span> <span class="n">discriminant</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="o">-</span><span class="n">b</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+
+        <span class="c1"># Goes through sphere, i.e., two intersections</span>
+        <span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">discriminant</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+        <span class="n">t2</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">discriminant</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">_plane_intersection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plane</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">((</span><span class="n">plane</span><span class="o">.</span><span class="n">point</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">plane</span><span class="o">.</span><span class="n">normal</span><span class="p">)</span>
+                <span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">direction</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">plane</span><span class="o">.</span><span class="n">normal</span><span class="p">))</span>
+    
+    <span class="k">def</span> <span class="nf">_polygon_intersection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">polygon</span><span class="p">):</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">polygon</span><span class="o">.</span><span class="n">plane</span><span class="p">())</span>
+        <span class="n">point</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">point</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+        <span class="c1"># Each polygon provides its own point in polygon algorithm</span>
+        <span class="k">if</span> <span class="n">point</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">polygon</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NoIntersection</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">t</span>
+</pre></div>
+
+        </details>
+
+            <div class="docstring"><p>Ray(origin: <a href="#Point3D">raytracer.geometry.Point3D</a>, direction: <a href="#Point3D">raytracer.geometry.Point3D</a>)</p>
+</div>
+
+
+                            <div id="Ray.__init__" class="classattr">
+                                        <div class="attr function"><a class="headerlink" href="#Ray.__init__">#&nbsp;&nbsp</a>
+
+        
+            <span class="name">Ray</span><span class="signature">(
+    origin: <a href="#Point3D">raytracer.geometry.Point3D</a>,
+    direction: <a href="#Point3D">raytracer.geometry.Point3D</a>
+)</span>
+    </div>
+
+    
+    
+
+                            </div>
+                            <div id="Ray.point" class="classattr">
+                                        <div class="attr function"><a class="headerlink" href="#Ray.point">#&nbsp;&nbsp</a>
+
+        
+            <span class="def">def</span>
+            <span class="name">point</span><span class="signature">(self, t)</span>:
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">origin</span> <span class="o">+</span> <span class="n">t</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">direction</span>
+</pre></div>
+
+        </details>
+
+    
+
+                            </div>
+                            <div id="Ray.intersection" class="classattr">
+                                        <div class="attr function"><a class="headerlink" href="#Ray.intersection">#&nbsp;&nbsp</a>
+
+        
+            <span class="def">def</span>
+            <span class="name">intersection</span><span class="signature">(self, shape) -&gt; float</span>:
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">intersection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shape</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">Sphere</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sphere_intersection</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">Plane</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_plane_intersection</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">Polygon</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_polygon_intersection</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+
+        </details>
+
+    
+
+                            </div>
+                </section>
+                <section id="AxisAlignedBox">
+                                <div class="attr class">
+        <a class="headerlink" href="#AxisAlignedBox">#&nbsp;&nbsp</a>
+
+                <div class="decorator">@dataclass(frozen=True)</div>
+
+        <span class="def">class</span>
+        <span class="name">AxisAlignedBox</span>:
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">AxisAlignedBox</span><span class="p">:</span>
+    <span class="n">mined</span><span class="p">:</span> <span class="n">Point3D</span>
+    <span class="n">maxed</span><span class="p">:</span> <span class="n">Point3D</span>
+</pre></div>
+
+        </details>
+
+            <div class="docstring"><p>AxisAlignedBox(mined: <a href="#Point3D">raytracer.geometry.Point3D</a>, maxed: <a href="#Point3D">raytracer.geometry.Point3D</a>)</p>
+</div>
+
+
+                            <div id="AxisAlignedBox.__init__" class="classattr">
+                                        <div class="attr function"><a class="headerlink" href="#AxisAlignedBox.__init__">#&nbsp;&nbsp</a>
+
+        
+            <span class="name">AxisAlignedBox</span><span class="signature">(mined: <a href="#Point3D">raytracer.geometry.Point3D</a>, maxed: <a href="#Point3D">raytracer.geometry.Point3D</a>)</span>
+    </div>
+
+    
+    
+
+                            </div>
+                </section>
+                <section id="Sphere">
+                                <div class="attr class">
+        <a class="headerlink" href="#Sphere">#&nbsp;&nbsp</a>
+
+                <div class="decorator">@dataclass(frozen=True)</div>
+
+        <span class="def">class</span>
+        <span class="name">Sphere</span>:
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Sphere</span><span class="p">:</span>
+    <span class="n">center</span><span class="p">:</span> <span class="n">Point3D</span>
+    <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span>
+
+    <span class="k">def</span> <span class="nf">bounding_box</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AxisAlignedBox</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">AxisAlignedBox</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">center</span> <span class="o">-</span> <span class="n">Point3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">),</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">center</span> <span class="o">+</span> <span class="n">Point3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">))</span>
+</pre></div>
+
+        </details>
+
+            <div class="docstring"><p>Sphere(center: <a href="#Point3D">raytracer.geometry.Point3D</a>, radius: float)</p>
+</div>
+
+
+                            <div id="Sphere.__init__" class="classattr">
+                                        <div class="attr function"><a class="headerlink" href="#Sphere.__init__">#&nbsp;&nbsp</a>
+
+        
+            <span class="name">Sphere</span><span class="signature">(center: <a href="#Point3D">raytracer.geometry.Point3D</a>, radius: float)</span>
+    </div>
+
+    
+    
+
+                            </div>
+                            <div id="Sphere.bounding_box" class="classattr">
+                                        <div class="attr function"><a class="headerlink" href="#Sphere.bounding_box">#&nbsp;&nbsp</a>
+
+        
+            <span class="def">def</span>
+            <span class="name">bounding_box</span><span class="signature">(self) -&gt; <a href="#AxisAlignedBox">raytracer.geometry.AxisAlignedBox</a></span>:
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">bounding_box</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AxisAlignedBox</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">AxisAlignedBox</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">center</span> <span class="o">-</span> <span class="n">Point3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">),</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">center</span> <span class="o">+</span> <span class="n">Point3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">))</span>
+</pre></div>
+
+        </details>
+
+    
+
+                            </div>
+                </section>
+                <section id="Plane">
+                                <div class="attr class">
+        <a class="headerlink" href="#Plane">#&nbsp;&nbsp</a>
+
+                <div class="decorator">@dataclass(frozen=True)</div>
+
+        <span class="def">class</span>
+        <span class="name">Plane</span>:
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Plane</span><span class="p">:</span>
+    <span class="n">point</span><span class="p">:</span> <span class="n">Point3D</span>
+    <span class="n">normal</span><span class="p">:</span> <span class="n">Point3D</span>
+</pre></div>
+
+        </details>
+
+            <div class="docstring"><p>Plane(point: <a href="#Point3D">raytracer.geometry.Point3D</a>, normal: <a href="#Point3D">raytracer.geometry.Point3D</a>)</p>
+</div>
+
+
+                            <div id="Plane.__init__" class="classattr">
+                                        <div class="attr function"><a class="headerlink" href="#Plane.__init__">#&nbsp;&nbsp</a>
+
+        
+            <span class="name">Plane</span><span class="signature">(
+    point: <a href="#Point3D">raytracer.geometry.Point3D</a>,
+    normal: <a href="#Point3D">raytracer.geometry.Point3D</a>
+)</span>
+    </div>
+
+    
+    
+
+                            </div>
+                </section>
+                <section id="Polygon">
+                                <div class="attr class">
+        <a class="headerlink" href="#Polygon">#&nbsp;&nbsp</a>
+
+        
+        <span class="def">class</span>
+        <span class="name">Polygon</span>:
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Polygon</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">points</span><span class="p">:</span> <span class="n">Point3D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_points</span> <span class="o">=</span> <span class="n">points</span>
+
+    <span class="k">def</span> <span class="nf">plane</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Plane</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                     <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                     <span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+    <span class="k">def</span> <span class="nf">bounding_box</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AxisAlignedBox</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">AxisAlignedBox</span><span class="p">(</span>
+            <span class="n">Point3D</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">x</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">),</span>
+                    <span class="nb">min</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">y</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">),</span>
+                    <span class="nb">min</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">z</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">)),</span>
+            <span class="n">Point3D</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">x</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">),</span>
+                    <span class="nb">max</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">y</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">),</span>
+                    <span class="nb">max</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">z</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">)))</span>
+</pre></div>
+
+        </details>
+
+    
+
+                            <div id="Polygon.__init__" class="classattr">
+                                        <div class="attr function"><a class="headerlink" href="#Polygon.__init__">#&nbsp;&nbsp</a>
+
+        
+            <span class="name">Polygon</span><span class="signature">(*points: <a href="#Point3D">raytracer.geometry.Point3D</a>)</span>
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">points</span><span class="p">:</span> <span class="n">Point3D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_points</span> <span class="o">=</span> <span class="n">points</span>
+</pre></div>
+
+        </details>
+
+    
+
+                            </div>
+                            <div id="Polygon.plane" class="classattr">
+                                        <div class="attr function"><a class="headerlink" href="#Polygon.plane">#&nbsp;&nbsp</a>
+
+        
+            <span class="def">def</span>
+            <span class="name">plane</span><span class="signature">(self)</span>:
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">plane</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Plane</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                     <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                     <span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+
+        </details>
+
+    
+
+                            </div>
+                            <div id="Polygon.bounding_box" class="classattr">
+                                        <div class="attr function"><a class="headerlink" href="#Polygon.bounding_box">#&nbsp;&nbsp</a>
+
+        
+            <span class="def">def</span>
+            <span class="name">bounding_box</span><span class="signature">(self) -&gt; <a href="#AxisAlignedBox">raytracer.geometry.AxisAlignedBox</a></span>:
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">bounding_box</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AxisAlignedBox</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">AxisAlignedBox</span><span class="p">(</span>
+            <span class="n">Point3D</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">x</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">),</span>
+                    <span class="nb">min</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">y</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">),</span>
+                    <span class="nb">min</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">z</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">)),</span>
+            <span class="n">Point3D</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">x</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">),</span>
+                    <span class="nb">max</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">y</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">),</span>
+                    <span class="nb">max</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">z</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="p">)))</span>
+</pre></div>
+
+        </details>
+
+    
+
+                            </div>
+                </section>
+                <section id="Triangle">
+                                <div class="attr class">
+        <a class="headerlink" href="#Triangle">#&nbsp;&nbsp</a>
+
+        
+        <span class="def">class</span>
+        <span class="name">Triangle</span><wbr>(<span class="base"><a href="#Polygon">Polygon</a></span>):
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Triangle</span><span class="p">(</span><span class="n">Polygon</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span> <span class="n">Point3D</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Point3D</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span> <span class="n">Point3D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">c</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">uv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;This only works when point is already known to be in the plane of</span>
+<span class="sd">        the triangle.&quot;&quot;&quot;</span>
+
+        <span class="n">ab</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span>
+        <span class="n">ac</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span>
+
+        <span class="n">determinant</span> <span class="o">=</span> <span class="n">ab</span><span class="o">.</span><span class="n">x</span><span class="o">*</span><span class="n">ac</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">ab</span><span class="o">.</span><span class="n">y</span><span class="o">*</span><span class="n">ac</span><span class="o">.</span><span class="n">x</span>
+
+        <span class="c1"># ab and ac are colinear</span>
+        <span class="k">if</span> <span class="n">determinant</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">Colinear</span><span class="p">(</span><span class="s2">&quot;Vectors AB and AC are colinear&quot;</span><span class="p">)</span>
+
+        <span class="n">ap</span> <span class="o">=</span> <span class="n">point</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span>
+
+        <span class="n">u</span> <span class="o">=</span> <span class="p">(</span><span class="n">ap</span><span class="o">.</span><span class="n">x</span><span class="o">*</span><span class="n">ac</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">ap</span><span class="o">.</span><span class="n">y</span><span class="o">*</span><span class="n">ac</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">determinant</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="p">(</span><span class="n">ab</span><span class="o">.</span><span class="n">x</span><span class="o">*</span><span class="n">ap</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">ab</span><span class="o">.</span><span class="n">y</span><span class="o">*</span><span class="n">ap</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">determinant</span>
+
+        <span class="k">return</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span>
+
+    <span class="k">def</span> <span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">:</span> <span class="n">Point3D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">uv</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>
+        
+        <span class="k">except</span> <span class="n">Colinear</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="k">return</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">u</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">v</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">u</span> <span class="o">-</span> <span class="n">v</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+        </details>
+
+    
+
+                            <div id="Triangle.__init__" class="classattr">
+                                        <div class="attr function"><a class="headerlink" href="#Triangle.__init__">#&nbsp;&nbsp</a>
+
+        
+            <span class="name">Triangle</span><span class="signature">(
+    a: <a href="#Point3D">raytracer.geometry.Point3D</a>,
+    b: <a href="#Point3D">raytracer.geometry.Point3D</a>,
+    c: <a href="#Point3D">raytracer.geometry.Point3D</a>
+)</span>
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span> <span class="n">Point3D</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Point3D</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span> <span class="n">Point3D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">c</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+</pre></div>
+
+        </details>
+
+    
+
+                            </div>
+                            <div id="Triangle.uv" class="classattr">
+                                        <div class="attr function"><a class="headerlink" href="#Triangle.uv">#&nbsp;&nbsp</a>
+
+        
+            <span class="def">def</span>
+            <span class="name">uv</span><span class="signature">(self, point)</span>:
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">uv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;This only works when point is already known to be in the plane of</span>
+<span class="sd">        the triangle.&quot;&quot;&quot;</span>
+
+        <span class="n">ab</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span>
+        <span class="n">ac</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span>
+
+        <span class="n">determinant</span> <span class="o">=</span> <span class="n">ab</span><span class="o">.</span><span class="n">x</span><span class="o">*</span><span class="n">ac</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">ab</span><span class="o">.</span><span class="n">y</span><span class="o">*</span><span class="n">ac</span><span class="o">.</span><span class="n">x</span>
+
+        <span class="c1"># ab and ac are colinear</span>
+        <span class="k">if</span> <span class="n">determinant</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">Colinear</span><span class="p">(</span><span class="s2">&quot;Vectors AB and AC are colinear&quot;</span><span class="p">)</span>
+
+        <span class="n">ap</span> <span class="o">=</span> <span class="n">point</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span>
+
+        <span class="n">u</span> <span class="o">=</span> <span class="p">(</span><span class="n">ap</span><span class="o">.</span><span class="n">x</span><span class="o">*</span><span class="n">ac</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">ap</span><span class="o">.</span><span class="n">y</span><span class="o">*</span><span class="n">ac</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">determinant</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="p">(</span><span class="n">ab</span><span class="o">.</span><span class="n">x</span><span class="o">*</span><span class="n">ap</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">ab</span><span class="o">.</span><span class="n">y</span><span class="o">*</span><span class="n">ap</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">determinant</span>
+
+        <span class="k">return</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span>
+</pre></div>
+
+        </details>
+
+            <div class="docstring"><p>This only works when point is already known to be in the plane of
+the triangle.</p>
 </div>
 
 
@@ -161,9 +1295,61 @@
                             <div class="inherited">
                                 <h5>Inherited Members</h5>
                                 <dl>
-                                    <div><dt>builtins.tuple</dt>
-                                <dd id="Point3D.index" class="function">index</dd>
-                <dd id="Point3D.count" class="function">count</dd>
+                                    <div><dt><a href="#Polygon">Polygon</a></dt>
+                                <dd id="Triangle.plane" class="function"><a href="#Polygon.plane">plane</a></dd>
+                <dd id="Triangle.bounding_box" class="function"><a href="#Polygon.bounding_box">bounding_box</a></dd>
+
+            </div>
+                                </dl>
+                            </div>
+                </section>
+                <section id="Parallelogram">
+                                <div class="attr class">
+        <a class="headerlink" href="#Parallelogram">#&nbsp;&nbsp</a>
+
+        
+        <span class="def">class</span>
+        <span class="name">Parallelogram</span><wbr>(<span class="base"><a href="#Triangle">Triangle</a></span>):
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Parallelogram</span><span class="p">(</span><span class="n">Triangle</span><span class="p">):</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">d</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span>
+
+    <span class="k">def</span> <span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">:</span> <span class="n">Point3D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">uv</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">u</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">v</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+        </details>
+
+    
+
+                            <div id="Parallelogram.d" class="classattr">
+                                            <div class="attr variable"><a class="headerlink" href="#Parallelogram.d">#&nbsp;&nbsp</a>
+
+        <span class="name">d</span>
+    </div>
+
+    
+    
+
+                            </div>
+                            <div class="inherited">
+                                <h5>Inherited Members</h5>
+                                <dl>
+                                    <div><dt><a href="#Triangle">Triangle</a></dt>
+                                <dd id="Parallelogram.__init__" class="function"><a href="#Triangle.__init__">Triangle</a></dd>
+                <dd id="Parallelogram.uv" class="function"><a href="#Triangle.uv">uv</a></dd>
+
+            </div>
+            <div><dt><a href="#Polygon">Polygon</a></dt>
+                                <dd id="Parallelogram.plane" class="function"><a href="#Polygon.plane">plane</a></dd>
+                <dd id="Parallelogram.bounding_box" class="function"><a href="#Polygon.bounding_box">bounding_box</a></dd>
 
             </div>
                                 </dl>

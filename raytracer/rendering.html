@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="pdoc 10.0.3"/>
+    <meta name="generator" content="pdoc 10.0.4"/>
     <title>raytracer.rendering API documentation</title>
 
     <style>/*! * Bootstrap Reboot v5.0.0 (https://getbootstrap.com/) * Copyright 2011-2021 The Bootstrap Authors * Copyright 2011-2021 Twitter, Inc. * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE) * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md) */*,::after,::before{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;background-color:#fff;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}hr{margin:1rem 0;color:inherit;background-color:currentColor;border:0;opacity:.25}hr:not([size]){height:1px}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2}h1{font-size:calc(1.375rem + 1.5vw)}@media (min-width:1200px){h1{font-size:2.5rem}}h2{font-size:calc(1.325rem + .9vw)}@media (min-width:1200px){h2{font-size:2rem}}h3{font-size:calc(1.3rem + .6vw)}@media (min-width:1200px){h3{font-size:1.75rem}}h4{font-size:calc(1.275rem + .3vw)}@media (min-width:1200px){h4{font-size:1.5rem}}h5{font-size:1.25rem}h6{font-size:1rem}p{margin-top:0;margin-bottom:1rem}abbr[data-bs-original-title],abbr[title]{-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}ol,ul{padding-left:2rem}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:.875em}mark{padding:.2em;background-color:#fcf8e3}sub,sup{position:relative;font-size:.75em;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#0d6efd;text-decoration:underline}a:hover{color:#0a58ca}a:not([href]):not([class]),a:not([href]):not([class]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em;direction:ltr;unicode-bidi:bidi-override}pre{display:block;margin-top:0;margin-bottom:1rem;overflow:auto;font-size:.875em}pre code{font-size:inherit;color:inherit;word-break:normal}code{font-size:.875em;color:#d63384;word-wrap:break-word}a>code{color:inherit}kbd{padding:.2rem .4rem;font-size:.875em;color:#fff;background-color:#212529;border-radius:.2rem}kbd kbd{padding:0;font-size:1em;font-weight:700}figure{margin:0 0 1rem}img,svg{vertical-align:middle}table{caption-side:bottom;border-collapse:collapse}caption{padding-top:.5rem;padding-bottom:.5rem;color:#6c757d;text-align:left}th{text-align:inherit;text-align:-webkit-match-parent}tbody,td,tfoot,th,thead,tr{border-color:inherit;border-style:solid;border-width:0}label{display:inline-block}button{border-radius:0}button:focus:not(:focus-visible){outline:0}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,select{text-transform:none}[role=button]{cursor:pointer}select{word-wrap:normal}select:disabled{opacity:1}[list]::-webkit-calendar-picker-indicator{display:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}::-moz-focus-inner{padding:0;border-style:none}textarea{resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{float:left;width:100%;padding:0;margin-bottom:.5rem;font-size:calc(1.275rem + .3vw);line-height:inherit}@media (min-width:1200px){legend{font-size:1.5rem}}legend+*{clear:left}::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-fields-wrapper,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-text,::-webkit-datetime-edit-year-field{padding:0}::-webkit-inner-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:textfield}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-color-swatch-wrapper{padding:0}::file-selector-button{font:inherit}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}iframe{border:0}summary{display:list-item;cursor:pointer}progress{vertical-align:baseline}[hidden]{display:none!important}</style>
@@ -31,19 +31,43 @@
         <h2>API Documentation</h2>
             <ul class="memberlist">
             <li>
-                    <a class="class" href="#Renderer">Renderer</a>
+                    <a class="class" href="#Image">Image</a>
                             <ul class="memberlist">
                         <li>
-                                <a class="function" href="#Renderer.__init__">Renderer</a>
+                                <a class="function" href="#Image.__init__">Image</a>
                         </li>
                         <li>
-                                <a class="function" href="#Renderer.ray">ray</a>
+                                <a class="function" href="#Image.pixel_center">pixel_center</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Image.pixel_width">pixel_width</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Image.pixel_height">pixel_height</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Image.render">render</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Image.save">save</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Image.downsample">downsample</a>
                         </li>
                 </ul>
 
             </li>
             <li>
-                    <a class="variable" href="#r">r</a>
+                    <a class="class" href="#Progress">Progress</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#Progress.__init__">Progress</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Progress.update">update</a>
+                        </li>
+                </ul>
+
             </li>
     </ul>
 
@@ -64,126 +88,265 @@
                 
                         <details>
             <summary>View Source</summary>
-            <div class="pdoc-code codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
-<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">cached_property</span>
-<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">product</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">tan</span><span class="p">,</span> <span class="n">radians</span>
-<span class="kn">import</span> <span class="nn">random</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">cached_property</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">raytracer.geometry</span> <span class="kn">import</span> <span class="n">Point3D</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span> <span class="k">as</span> <span class="n">Saver</span>
 
 <span class="kn">from</span> <span class="nn">.camera</span> <span class="kn">import</span> <span class="n">Camera</span>
-<span class="c1"># from PIL import Image</span>
+<span class="kn">from</span> <span class="nn">.color</span> <span class="kn">import</span> <span class="n">Color</span>
+<span class="kn">from</span> <span class="nn">.geometry</span> <span class="kn">import</span> <span class="n">NoIntersection</span><span class="p">,</span> <span class="n">Point3D</span><span class="p">,</span> <span class="n">Ray</span>
+<span class="kn">from</span> <span class="nn">.scene</span> <span class="kn">import</span> <span class="n">Scene</span>
 
 
-<span class="c1"># class PILRenderer:</span>
+<span class="k">class</span> <span class="nc">Image</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scene</span><span class="p">:</span> <span class="n">Scene</span><span class="p">,</span> <span class="n">camera</span><span class="p">:</span> <span class="n">Camera</span><span class="p">,</span>
+                 <span class="n">width</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">anti_aliasing</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">width</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">height</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Can only specify height or width, not both&quot;</span><span class="p">)</span>
 
-<span class="c1"># return Image.fromarray(np.uint8(pixels*255))</span>
+        <span class="k">if</span> <span class="n">width</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">height</span> <span class="o">=</span> <span class="n">width</span><span class="o">/</span><span class="n">camera</span><span class="o">.</span><span class="n">aspect</span>
 
-<span class="k">class</span> <span class="nc">Renderer</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scene</span><span class="p">,</span> <span class="n">camera</span><span class="p">,</span> <span class="n">pxs_high</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">height</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">width</span> <span class="o">=</span> <span class="n">height</span><span class="o">*</span><span class="n">camera</span><span class="o">.</span><span class="n">aspect</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">scene</span> <span class="o">=</span> <span class="n">scene</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">camera</span> <span class="o">=</span> <span class="n">camera</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">pxs_high</span> <span class="o">=</span> <span class="n">pxs_high</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">width</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">height</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">anti_aliasing</span> <span class="o">=</span> <span class="n">anti_aliasing</span>
         
-        <span class="bp">self</span><span class="o">.</span><span class="n">pxs_wide</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">pxs_high</span><span class="o">*</span><span class="n">camera</span><span class="o">.</span><span class="n">aspect</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">px_size</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">image_height</span><span class="o">/</span><span class="n">pxs_high</span>
+        <span class="k">if</span> <span class="n">anti_aliasing</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">*=</span> <span class="mi">4</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*=</span> <span class="mi">4</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">pixel_centers</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span>
-            <span class="nb">tuple</span><span class="p">(</span><span class="n">Point3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">image_origin</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">px_size</span><span class="o">*</span><span class="n">j</span><span class="p">,</span>
-                          <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">image_origin</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">px_size</span><span class="o">*</span><span class="n">i</span><span class="p">,</span>
-                          <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">image_origin</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
-                  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pxs_wide</span><span class="p">))</span>
-            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pxs_high</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pixel_colors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 
-    <span class="k">def</span> <span class="nf">ray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="n">pixel_center</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pixel_centers</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span>
-        <span class="n">direction</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">pixel_center</span><span class="p">)</span>
-                     <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span><span class="p">))</span>
-        <span class="n">direction_norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">direction</span><span class="p">)</span>
-        <span class="n">unit_direction</span> <span class="o">=</span> <span class="n">direction</span><span class="o">/</span><span class="n">direction_norm</span>
+    <span class="k">def</span> <span class="nf">pixel_center</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Point3D</span><span class="p">:</span>
+        <span class="n">shifted_i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+        <span class="n">shifted_j</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">j</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span><span class="p">,</span> <span class="n">Point3D</span><span class="p">(</span><span class="o">*</span><span class="n">unit_direction</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pixel_width</span><span class="o">*</span><span class="n">shifted_j</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pixel_height</span><span class="o">*</span><span class="n">shifted_i</span>
+
+        <span class="k">return</span> <span class="n">Point3D</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">z</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">near_clip</span><span class="p">)</span>
+
+    <span class="nd">@cached_property</span>
+    <span class="k">def</span> <span class="nf">pixel_width</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">near_clip_width</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span>
+
+    <span class="nd">@cached_property</span>
+    <span class="k">def</span> <span class="nf">pixel_height</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">near_clip_height</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span>
+
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">progress</span> <span class="o">=</span> <span class="n">Progress</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">start_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">):</span>
+                <span class="n">ray_direction</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pixel_center</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+                                 <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span><span class="p">)</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span>
+                <span class="n">ray</span> <span class="o">=</span> <span class="n">Ray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span><span class="p">,</span> <span class="n">ray_direction</span><span class="p">)</span>
+
+                <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">objects</span><span class="p">:</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">t</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+                    
+                    <span class="k">except</span> <span class="n">NoIntersection</span><span class="p">:</span>
+                        <span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+                    <span class="bp">self</span><span class="o">.</span><span class="n">pixel_colors</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">color</span><span class="o">.</span><span class="n">data</span>
+                
+                <span class="n">progress</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">+</span> <span class="n">j</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">anti_aliasing</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pixel_colors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">downsample</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pixel_colors</span><span class="p">)</span>
+        
+        <span class="n">elapsed_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Completed in </span><span class="si">{</span><span class="n">elapsed_time</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">Saver</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pixel_colors</span><span class="o">*</span><span class="mi">255</span><span class="p">))</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">downsample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pixel_colors</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">pixel_colors</span>
+                <span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="o">//</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="o">//</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+                <span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
 
 
-<span class="n">c</span> <span class="o">=</span> <span class="n">Camera</span><span class="p">(</span><span class="n">Point3D</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">0.78</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">image_width</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">image_height</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Progress</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># Options</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_value</span> <span class="o">=</span> <span class="n">max_value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">get_terminal_size</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">Renderer</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="mi">800</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">pxs_wide</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">pxs_high</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">ray</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="c1"># Init state</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">percent_done</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_bars</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">old_num_bars</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">percent_done</span> <span class="o">=</span> <span class="n">value</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">max_value</span>
+        <span class="n">num_bars</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">percent_done</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
+
+        <span class="c1"># Only print changes</span>
+        <span class="k">if</span> <span class="n">num_bars</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_bars</span><span class="p">:</span>
+            <span class="n">bars</span> <span class="o">=</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="n">num_bars</span>
+            <span class="n">space</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="n">num_bars</span><span class="p">)</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rendering: [</span><span class="si">{</span><span class="n">bars</span><span class="si">}</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">space</span><span class="si">}</span><span class="s2">] </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">percent_done</span><span class="si">:</span><span class="s2">.0%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">percent_done</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">()</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_bars</span> <span class="o">=</span> <span class="n">num_bars</span>
 </pre></div>
 
         </details>
 
             </section>
-                <section id="Renderer">
+                <section id="Image">
                                 <div class="attr class">
-        <a class="headerlink" href="#Renderer">#&nbsp;&nbsp</a>
+        <a class="headerlink" href="#Image">#&nbsp;&nbsp</a>
 
         
         <span class="def">class</span>
-        <span class="name">Renderer</span>:
+        <span class="name">Image</span>:
     </div>
 
             <details>
             <summary>View Source</summary>
-            <div class="pdoc-code codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Renderer</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scene</span><span class="p">,</span> <span class="n">camera</span><span class="p">,</span> <span class="n">pxs_high</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Image</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scene</span><span class="p">:</span> <span class="n">Scene</span><span class="p">,</span> <span class="n">camera</span><span class="p">:</span> <span class="n">Camera</span><span class="p">,</span>
+                 <span class="n">width</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">anti_aliasing</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">width</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">height</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Can only specify height or width, not both&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">width</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">height</span> <span class="o">=</span> <span class="n">width</span><span class="o">/</span><span class="n">camera</span><span class="o">.</span><span class="n">aspect</span>
+
+        <span class="k">if</span> <span class="n">height</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">width</span> <span class="o">=</span> <span class="n">height</span><span class="o">*</span><span class="n">camera</span><span class="o">.</span><span class="n">aspect</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">scene</span> <span class="o">=</span> <span class="n">scene</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">camera</span> <span class="o">=</span> <span class="n">camera</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">pxs_high</span> <span class="o">=</span> <span class="n">pxs_high</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">width</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">height</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">anti_aliasing</span> <span class="o">=</span> <span class="n">anti_aliasing</span>
         
-        <span class="bp">self</span><span class="o">.</span><span class="n">pxs_wide</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">pxs_high</span><span class="o">*</span><span class="n">camera</span><span class="o">.</span><span class="n">aspect</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">px_size</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">image_height</span><span class="o">/</span><span class="n">pxs_high</span>
+        <span class="k">if</span> <span class="n">anti_aliasing</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">*=</span> <span class="mi">4</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*=</span> <span class="mi">4</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">pixel_centers</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span>
-            <span class="nb">tuple</span><span class="p">(</span><span class="n">Point3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">image_origin</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">px_size</span><span class="o">*</span><span class="n">j</span><span class="p">,</span>
-                          <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">image_origin</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">px_size</span><span class="o">*</span><span class="n">i</span><span class="p">,</span>
-                          <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">image_origin</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
-                  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pxs_wide</span><span class="p">))</span>
-            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pxs_high</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pixel_colors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 
-    <span class="k">def</span> <span class="nf">ray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="n">pixel_center</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pixel_centers</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span>
-        <span class="n">direction</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">pixel_center</span><span class="p">)</span>
-                     <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span><span class="p">))</span>
-        <span class="n">direction_norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">direction</span><span class="p">)</span>
-        <span class="n">unit_direction</span> <span class="o">=</span> <span class="n">direction</span><span class="o">/</span><span class="n">direction_norm</span>
+    <span class="k">def</span> <span class="nf">pixel_center</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Point3D</span><span class="p">:</span>
+        <span class="n">shifted_i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+        <span class="n">shifted_j</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">j</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span><span class="p">,</span> <span class="n">Point3D</span><span class="p">(</span><span class="o">*</span><span class="n">unit_direction</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pixel_width</span><span class="o">*</span><span class="n">shifted_j</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pixel_height</span><span class="o">*</span><span class="n">shifted_i</span>
+
+        <span class="k">return</span> <span class="n">Point3D</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">z</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">near_clip</span><span class="p">)</span>
+
+    <span class="nd">@cached_property</span>
+    <span class="k">def</span> <span class="nf">pixel_width</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">near_clip_width</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span>
+
+    <span class="nd">@cached_property</span>
+    <span class="k">def</span> <span class="nf">pixel_height</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">near_clip_height</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span>
+
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">progress</span> <span class="o">=</span> <span class="n">Progress</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">start_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">):</span>
+                <span class="n">ray_direction</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pixel_center</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+                                 <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span><span class="p">)</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span>
+                <span class="n">ray</span> <span class="o">=</span> <span class="n">Ray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span><span class="p">,</span> <span class="n">ray_direction</span><span class="p">)</span>
+
+                <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">objects</span><span class="p">:</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">t</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+                    
+                    <span class="k">except</span> <span class="n">NoIntersection</span><span class="p">:</span>
+                        <span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+                    <span class="bp">self</span><span class="o">.</span><span class="n">pixel_colors</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">color</span><span class="o">.</span><span class="n">data</span>
+                
+                <span class="n">progress</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">+</span> <span class="n">j</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">anti_aliasing</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pixel_colors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">downsample</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pixel_colors</span><span class="p">)</span>
+        
+        <span class="n">elapsed_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Completed in </span><span class="si">{</span><span class="n">elapsed_time</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">Saver</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pixel_colors</span><span class="o">*</span><span class="mi">255</span><span class="p">))</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">downsample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pixel_colors</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">pixel_colors</span>
+                <span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="o">//</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="o">//</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+                <span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
 </pre></div>
 
         </details>
 
     
 
-                            <div id="Renderer.__init__" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#Renderer.__init__">#&nbsp;&nbsp</a>
+                            <div id="Image.__init__" class="classattr">
+                                        <div class="attr function"><a class="headerlink" href="#Image.__init__">#&nbsp;&nbsp</a>
 
         
-            <span class="name">Renderer</span><span class="signature">(scene, camera, pxs_high)</span>
+            <span class="name">Image</span><span class="signature">(
+    scene: <a href="scene.html#Scene">raytracer.scene.Scene</a>,
+    camera: <a href="camera.html#Camera">raytracer.camera.Camera</a>,
+    width: int = None,
+    height: int = None,
+    anti_aliasing=True
+)</span>
     </div>
 
             <details>
             <summary>View Source</summary>
-            <div class="pdoc-code codehilite"><pre><span></span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scene</span><span class="p">,</span> <span class="n">camera</span><span class="p">,</span> <span class="n">pxs_high</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+            <div class="pdoc-code codehilite"><pre><span></span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scene</span><span class="p">:</span> <span class="n">Scene</span><span class="p">,</span> <span class="n">camera</span><span class="p">:</span> <span class="n">Camera</span><span class="p">,</span>
+                 <span class="n">width</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">anti_aliasing</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">width</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">height</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Can only specify height or width, not both&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">width</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">height</span> <span class="o">=</span> <span class="n">width</span><span class="o">/</span><span class="n">camera</span><span class="o">.</span><span class="n">aspect</span>
+
+        <span class="k">if</span> <span class="n">height</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">width</span> <span class="o">=</span> <span class="n">height</span><span class="o">*</span><span class="n">camera</span><span class="o">.</span><span class="n">aspect</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">scene</span> <span class="o">=</span> <span class="n">scene</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">camera</span> <span class="o">=</span> <span class="n">camera</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">pxs_high</span> <span class="o">=</span> <span class="n">pxs_high</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">width</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">height</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">anti_aliasing</span> <span class="o">=</span> <span class="n">anti_aliasing</span>
         
-        <span class="bp">self</span><span class="o">.</span><span class="n">pxs_wide</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">pxs_high</span><span class="o">*</span><span class="n">camera</span><span class="o">.</span><span class="n">aspect</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">px_size</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">image_height</span><span class="o">/</span><span class="n">pxs_high</span>
+        <span class="k">if</span> <span class="n">anti_aliasing</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">*=</span> <span class="mi">4</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*=</span> <span class="mi">4</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">pixel_centers</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span>
-            <span class="nb">tuple</span><span class="p">(</span><span class="n">Point3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">image_origin</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">px_size</span><span class="o">*</span><span class="n">j</span><span class="p">,</span>
-                          <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">image_origin</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">px_size</span><span class="o">*</span><span class="n">i</span><span class="p">,</span>
-                          <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">image_origin</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
-                  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pxs_wide</span><span class="p">))</span>
-            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pxs_high</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pixel_colors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 </pre></div>
 
         </details>
@@ -191,24 +354,130 @@
     
 
                             </div>
-                            <div id="Renderer.ray" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#Renderer.ray">#&nbsp;&nbsp</a>
+                            <div id="Image.pixel_center" class="classattr">
+                                        <div class="attr function"><a class="headerlink" href="#Image.pixel_center">#&nbsp;&nbsp</a>
 
         
             <span class="def">def</span>
-            <span class="name">ray</span><span class="signature">(self, x, y)</span>:
+            <span class="name">pixel_center</span><span class="signature">(self, i, j) -&gt; <a href="geometry.html#Point3D">raytracer.geometry.Point3D</a></span>:
     </div>
 
             <details>
             <summary>View Source</summary>
-            <div class="pdoc-code codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">ray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="n">pixel_center</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pixel_centers</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span>
-        <span class="n">direction</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">pixel_center</span><span class="p">)</span>
-                     <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span><span class="p">))</span>
-        <span class="n">direction_norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">direction</span><span class="p">)</span>
-        <span class="n">unit_direction</span> <span class="o">=</span> <span class="n">direction</span><span class="o">/</span><span class="n">direction_norm</span>
+            <div class="pdoc-code codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">pixel_center</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Point3D</span><span class="p">:</span>
+        <span class="n">shifted_i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+        <span class="n">shifted_j</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">j</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span><span class="p">,</span> <span class="n">Point3D</span><span class="p">(</span><span class="o">*</span><span class="n">unit_direction</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pixel_width</span><span class="o">*</span><span class="n">shifted_j</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pixel_height</span><span class="o">*</span><span class="n">shifted_i</span>
+
+        <span class="k">return</span> <span class="n">Point3D</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">z</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">near_clip</span><span class="p">)</span>
+</pre></div>
+
+        </details>
+
+    
+
+                            </div>
+                            <div id="Image.pixel_width" class="classattr">
+                                            <div class="attr variable"><a class="headerlink" href="#Image.pixel_width">#&nbsp;&nbsp</a>
+
+        <span class="name">pixel_width</span><span class="annotation">: float</span>
+    </div>
+
+    
+    
+
+                            </div>
+                            <div id="Image.pixel_height" class="classattr">
+                                            <div class="attr variable"><a class="headerlink" href="#Image.pixel_height">#&nbsp;&nbsp</a>
+
+        <span class="name">pixel_height</span><span class="annotation">: float</span>
+    </div>
+
+    
+    
+
+                            </div>
+                            <div id="Image.render" class="classattr">
+                                        <div class="attr function"><a class="headerlink" href="#Image.render">#&nbsp;&nbsp</a>
+
+        
+            <span class="def">def</span>
+            <span class="name">render</span><span class="signature">(self) -&gt; None</span>:
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">progress</span> <span class="o">=</span> <span class="n">Progress</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">start_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">):</span>
+                <span class="n">ray_direction</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pixel_center</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+                                 <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span><span class="p">)</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span>
+                <span class="n">ray</span> <span class="o">=</span> <span class="n">Ray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span><span class="p">,</span> <span class="n">ray_direction</span><span class="p">)</span>
+
+                <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">objects</span><span class="p">:</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">t</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+                    
+                    <span class="k">except</span> <span class="n">NoIntersection</span><span class="p">:</span>
+                        <span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+                    <span class="bp">self</span><span class="o">.</span><span class="n">pixel_colors</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">color</span><span class="o">.</span><span class="n">data</span>
+                
+                <span class="n">progress</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">+</span> <span class="n">j</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">anti_aliasing</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pixel_colors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">downsample</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pixel_colors</span><span class="p">)</span>
+        
+        <span class="n">elapsed_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Completed in </span><span class="si">{</span><span class="n">elapsed_time</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+        </details>
+
+    
+
+                            </div>
+                            <div id="Image.save" class="classattr">
+                                        <div class="attr function"><a class="headerlink" href="#Image.save">#&nbsp;&nbsp</a>
+
+        
+            <span class="def">def</span>
+            <span class="name">save</span><span class="signature">(self, file_name) -&gt; None</span>:
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">Saver</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pixel_colors</span><span class="o">*</span><span class="mi">255</span><span class="p">))</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">)</span>
+</pre></div>
+
+        </details>
+
+    
+
+                            </div>
+                            <div id="Image.downsample" class="classattr">
+                                        <div class="attr function"><a class="headerlink" href="#Image.downsample">#&nbsp;&nbsp</a>
+
+        
+            <span class="def">def</span>
+            <span class="name">downsample</span><span class="signature">(self, pixel_colors)</span>:
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">downsample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pixel_colors</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">pixel_colors</span>
+                <span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="o">//</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="o">//</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+                <span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
 </pre></div>
 
         </details>
@@ -217,15 +486,106 @@
 
                             </div>
                 </section>
-                <section id="r">
-                                <div class="attr variable"><a class="headerlink" href="#r">#&nbsp;&nbsp</a>
+                <section id="Progress">
+                                <div class="attr class">
+        <a class="headerlink" href="#Progress">#&nbsp;&nbsp</a>
 
-        <span class="name">r</span><span class="default_value"> = &lt;<a href="#Renderer">raytracer.rendering.Renderer</a> object&gt;</span>
+        
+        <span class="def">class</span>
+        <span class="name">Progress</span>:
     </div>
 
-    
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Progress</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># Options</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_value</span> <span class="o">=</span> <span class="n">max_value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">get_terminal_size</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+
+        <span class="c1"># Init state</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">percent_done</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_bars</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">old_num_bars</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">percent_done</span> <span class="o">=</span> <span class="n">value</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">max_value</span>
+        <span class="n">num_bars</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">percent_done</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
+
+        <span class="c1"># Only print changes</span>
+        <span class="k">if</span> <span class="n">num_bars</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_bars</span><span class="p">:</span>
+            <span class="n">bars</span> <span class="o">=</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="n">num_bars</span>
+            <span class="n">space</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="n">num_bars</span><span class="p">)</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rendering: [</span><span class="si">{</span><span class="n">bars</span><span class="si">}</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">space</span><span class="si">}</span><span class="s2">] </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">percent_done</span><span class="si">:</span><span class="s2">.0%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">percent_done</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">()</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_bars</span> <span class="o">=</span> <span class="n">num_bars</span>
+</pre></div>
+
+        </details>
+
     
 
+                            <div id="Progress.__init__" class="classattr">
+                                        <div class="attr function"><a class="headerlink" href="#Progress.__init__">#&nbsp;&nbsp</a>
+
+        
+            <span class="name">Progress</span><span class="signature">(max_value)</span>
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># Options</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_value</span> <span class="o">=</span> <span class="n">max_value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">get_terminal_size</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+
+        <span class="c1"># Init state</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">percent_done</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_bars</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">old_num_bars</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+</pre></div>
+
+        </details>
+
+    
+
+                            </div>
+                            <div id="Progress.update" class="classattr">
+                                        <div class="attr function"><a class="headerlink" href="#Progress.update">#&nbsp;&nbsp</a>
+
+        
+            <span class="def">def</span>
+            <span class="name">update</span><span class="signature">(self, value)</span>:
+    </div>
+
+            <details>
+            <summary>View Source</summary>
+            <div class="pdoc-code codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">percent_done</span> <span class="o">=</span> <span class="n">value</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">max_value</span>
+        <span class="n">num_bars</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">percent_done</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
+
+        <span class="c1"># Only print changes</span>
+        <span class="k">if</span> <span class="n">num_bars</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_bars</span><span class="p">:</span>
+            <span class="n">bars</span> <span class="o">=</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="n">num_bars</span>
+            <span class="n">space</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="n">num_bars</span><span class="p">)</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rendering: [</span><span class="si">{</span><span class="n">bars</span><span class="si">}</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">space</span><span class="si">}</span><span class="s2">] </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">percent_done</span><span class="si">:</span><span class="s2">.0%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">percent_done</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">()</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_bars</span> <span class="o">=</span> <span class="n">num_bars</span>
+</pre></div>
+
+        </details>
+
+    
+
+                            </div>
                 </section>
     </main>
 <script>
