@@ -17,6 +17,14 @@ class Color:
     def blue(self) -> float:
         return self.data[2]
 
+    @classmethod
+    def from_hsl(cls, h: float, s: float, l: float):
+        raise NotImplementedError()
+
+    @classmethod
+    def from_hsv(cls, h: float, s: float, l: float):
+        raise NotImplementedError()
+
     def __add__(self, other):
         return self.__class__(*(self.data + other.data))
 
